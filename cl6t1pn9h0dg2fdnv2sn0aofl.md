@@ -1,6 +1,5 @@
 ## Vertical Slice Architecture in .NET 6
 
-
 ## Traditional Layered Architecture
 
 The first approach is the traditional layered architecture. This is a very common way to organize code and has been a standard for decades. I’m sure you have seen and used this on many projects before. A traditional layered/onion architecture approach organizes code around technical concerns in layers. In this approach, different layers are defined based on their responsibilities in the system. The layers then depend on each other so that they can collaborate and achieve their responsibilities. The dependency flow is guaranteed by forcing each layer to only depend on the ones below them (e.g., the presentation layer can only call code in the business logic layer).
@@ -55,7 +54,7 @@ The goal is to stop thinking about horizontal layers and start thinking about ve
 
 When moving towards the vertical slices we stop thinking about layers and abstractions. The reason is the vertical slice doesn't necessarily need shared layer abstractions like repositories, services and controllers. We are more focused on concrete Feature implementation and what is the best solution to implement. With this approach, every Feature (vertical slice) is in most cases self-contained and not coupled with other slices. The features relate and share the same domain model in most cases.
 
-![vertical-slices.png](/media/vertical-slices.png)
+![vertical-slices.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660464625999/uAQq-c-7U.png align="left")
 
 ## The change
 
@@ -71,7 +70,7 @@ I used the Clean Architecture template, because it uses the CQRS pattern with th
 
 Another approach I took (taken from Derek Comartin) about organizing code, is to put all code related to a given feature in a single file in most cases. With this approach we are having self-explanatory file names ExportTodos.cs and all related code close together: Api controller action methods, MediatR requests, MediatR handlers, validations, DTOs. This is what it looks like:
 
-![example-feature.png](/media/example-feature.png)
+![example-feature.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660464646530/8qGxIe2go.png align="left")
 
 ## Benefits of Vertical Slice Architecture
 
