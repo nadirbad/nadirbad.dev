@@ -1,4 +1,4 @@
-## Vertical Slice Architecture in .NET 6
+# Vertical Slice Architecture in .NET 6
 
 ## Traditional Layered Architecture
 
