@@ -1,4 +1,14 @@
-# Vertical Slice Architecture in .NET 6
+---
+title: "Vertical Slice Architecture in .NET"
+seoTitle: "Vertical Slice Architecture Example in C# .NET - Nadir Badnjevic"
+seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 6 API C#"
+datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
+cuid: cl6t1pn9h0dg2fdnv2sn0aofl
+slug: vertical-slice-architecture-dotnet
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/f80a756f1cc8c81153b070a916e7d345.jpeg
+tags: software-architecture, aspnet-core, clean-code, dotnet, clean-architecture
+
+---
 
 ## Traditional Layered Architecture
 
@@ -60,7 +70,7 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > * Jimmy Bogard.
 >     
 
-## Sample API solution in .NET
+## Example API solution in C# .NET
 
 Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler project template that showcases the Vertical Slice Architecture approach.
 
@@ -105,7 +115,7 @@ When following the principle of keeping things related to each other close, the 
 
 ## The source code
 
-Check out the [source code](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this pls star the repository :).
+Check out the source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
 
 ## Inspired by
 
