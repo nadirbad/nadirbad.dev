@@ -1,7 +1,7 @@
 ---
 title: "Vertical Slice Architecture in .NET"
 seoTitle: "Vertical Slice Architecture Example in C# .NET - Nadir Badnjevic"
-seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 6 API C#"
+seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 7 API C#"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
@@ -31,17 +31,17 @@ The most significant drawback of a layered architecture is that each layer is hi
 
 The tight coupling also makes it more difficult for developers working on different parts of the application to make changes in parallel, because one developer's work might cause problems with another developer's work. Having tight coupling between the layers, when changes are made to a feature, all the layers must be changed.
 
-Typically if I need to change a feature in a layered application, I end up touching different layers of the application and navigating through piles of projects, folders and files. For example for a simple change in a given feature you could be editing more than 5 files in all the layers:
+Typically if I need to change a feature in a layered application, I end up touching different layers of the application and navigating through piles of projects, folders and files. For example for a simple change in a given feature, you could be editing more than 5 files in all the layers:
 
-* Domain/TodoItem.cs
+* `Domain/TodoItem.cs`
     
-* Repositories/TodoItemsRepository.cs
+* `Repositories/TodoItemsRepository.cs`
     
-* Services/TodoItemsService.cs
+* `Services/TodoItemsService.cs`
     
-* ViewModels/TodoItemsViewModel.cs
+* `ViewModels/TodoItemsViewModel.cs`
     
-* Controllers/TodoItemsController.cs
+* `Controllers/TodoItemsController.cs`
     
 
 Layered architecture is great for some things, but it does have major drawbacks:
@@ -70,9 +70,9 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > * Jimmy Bogard.
 >     
 
-## Example API solution in C# .NET
+## Example API solution in C# .NET 7
 
-Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler project template that showcases the Vertical Slice Architecture approach.
+Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler [project template](https://github.com/nadirbad/VerticalSliceArchitecture) that showcases the Vertical Slice Architecture approach.
 
 The goal is to stop thinking about horizontal layers and start thinking about vertical slices and organize code by Features. When the code is organized by feature you get the benefits of not having to jump around projects, folders and files. Things related to given features are placed close together.
 
@@ -84,7 +84,7 @@ When moving toward the vertical slices we stop thinking about layers and abstrac
 
 This project repository is created based on the Clean Architecture solution template by Jason Taylor, and it uses technology choices and application business logic from this template, like:
 
-* ASP.NET API with .NET 6
+* ASP.NET API with .NET 7
     
 * CQRS with MediatR
     
