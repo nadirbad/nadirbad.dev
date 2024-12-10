@@ -1,7 +1,7 @@
 ---
 title: "How to Setup and Use NDepend on macOS for .NET Development"
 seoTitle: "How to Set Up and Use NDepend on macOS for .NET | Step-by-Step Guide"
-seoDescription: "Learn how to set up and use NDepend on macOS for .NET projects. A step-by-step guide to running static code analysis, improving code quality, and exploring "
+seoDescription: "Learn how to set up and use NDepend on macOS for .NET projects. A step-by-step guide to running static code analysis, improving code quality, and exploring"
 datePublished: Tue Dec 10 2024 21:35:14 GMT+0000 (Coordinated Universal Time)
 cuid: cm4izcsw7000d08l9g8b26ycp
 slug: how-to-setup-and-use-ndepend-on-macos-for-net-development
@@ -105,7 +105,7 @@ These suggestions aim to enhance the efficiency and user experience of NDepend, 
 
 ### Missing Exploring Code Architecture Diagrams on macOS
 
-If you are working on Windows and using Visual Studio you will benefit of having graphs and code architecture diagrams like this [dependency graph](https://www.ndepend.com/docs/visual-studio-dependency-graph). These graphs are really helpful, and they helped me to improve code architecture of [VerticalSliceArchitecture]([https://github.com/nadirbad/VerticalSliceArchitecture](https://github.com/nadirbad/VerticalSliceArchitecture)) and resolve coupling issues, as noted here on \[NDepend blog on comparing Clean Architecture and Vertical Slice approach\]([https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/#Note\_on\_this\_implementation](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/#Note_on_this_implementation)). Here is the example of dependency graph of VerticalSliceArchitecture project:
+If you are working on Windows and using Visual Studio you will benefit of having graphs and code architecture diagrams like this [dependency graph](https://www.ndepend.com/docs/visual-studio-dependency-graph). These graphs are really helpful, and they helped me to improve code architecture of [VerticalSliceArchitecture](https://github.com/nadirbad/VerticalSliceArchitecture) and resolve coupling issues, as noted here on [NDepend blog on comparing Clean Architecture and Vertical Slice approach](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/#Note_on_this_implementation). Here is the example of dependency graph of VerticalSliceArchitecture project:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1733510542365/50fdb9db-0e28-459f-ac0e-078a569897ea.webp align="center")
 
