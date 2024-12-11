@@ -81,7 +81,13 @@ Replace `VerticalSliceArchitecture.ndproj` with the path to your NDepend project
 
 ### Step 2: Review the Results
 
-Once the analysis completes, NDepend will generate a nice HTML report in the NDependOut folder. Open the `/NDependOut/NDependReport.html` report in your browser to explore various metrics, code rules, and potential issues found in your codebase. **Since my VerticalSliceArchitecture project code broke some rules, the command line exited non-zero.** This is great for build integration where I want to fail if rules get violated.
+Once the analysis completes, NDepend will generate a nice HTML report in the NDependOut folder. Open the generated `/NDependOut/NDependReport.html` report in your browser to explore various metrics, code rules, and potential issues found in your codebase. **Since my VerticalSliceArchitecture project code broke some rules, the command line exited non-zero.** This is great for build integration where I want to fail if rules get violated.
+
+Here’s a quick glimpse of the detailed insights and analysis you can expect from NDepend:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1733902362225/371893f2-23b3-48d5-a22d-567e6c942c70.gif align="center")
+
+For a deeper look, explore [sample reports](https://www.ndepend.com/sample-reports/) from other projects to see the breadth of data and actionable recommendations NDepend provides.
 
 ## Potential Enhancement
 
@@ -109,6 +115,12 @@ If you are working on Windows and using Visual Studio you will benefit of having
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1733510542365/50fdb9db-0e28-459f-ac0e-078a569897ea.webp align="center")
 
+Luckily, NDepend have plans to add SVG graphs to HTML reports like these:
+
+[https://www.ndepend.com/Res/v2020.1/AspNetCore3.1.html](https://www.ndepend.com/Res/v2020.1/AspNetCore3.1.html)
+
+[https://www.ndepend.com/Res/v2020.1/DependencyGraph.html](https://www.ndepend.com/Res/v2020.1/AspNetCore3.1.html)
+
 ## Conclusion
 
 And there you have it! You've successfully set up NDepend on your Mac, analyzed your .NET codebase.
@@ -123,8 +135,9 @@ If you're looking for a practical example of setting up and running NDepend, che
 
 I've included:
 
-- A complete step-by-step instruction guide for integrating NDepend.
-- A helper shell [run-ndepend.sh](https://github.com/nadirbad/VerticalSliceArchitecture/blob/ndepend-analysis/run-ndepend.sh) script to streamline the process.
+* A complete step-by-step instruction guide for integrating NDepend.
+    
+* A helper shell [run-ndepend.sh](https://github.com/nadirbad/VerticalSliceArchitecture/blob/ndepend-analysis/run-ndepend.sh) script to streamline the process.
+    
 
 This example demonstrates how NDepend can be used effectively to analyze and enhance a real-world project.
-
