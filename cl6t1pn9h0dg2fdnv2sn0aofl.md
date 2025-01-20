@@ -1,5 +1,5 @@
 ---
-title: "Vertical Slice Architecture in .NET"
+title: "Vertical Slice Architecture in C# .NET"
 seoTitle: "Vertical Slice Architecture in C# .NET"
 seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 9 API C#"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
