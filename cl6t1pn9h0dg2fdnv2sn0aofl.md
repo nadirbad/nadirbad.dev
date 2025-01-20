@@ -1,12 +1,12 @@
 ---
 title: "Vertical Slice Architecture in .NET"
 seoTitle: "Vertical Slice Architecture Example in C# .NET - Nadir Badnjevic"
-seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 8 API C#"
+seoDescription: "The Vertical Slice Architecture style is about organizing code by features and vertical slices instead of by technical concerns. Example in .NET 9 API C#"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/f80a756f1cc8c81153b070a916e7d345.jpeg
-tags: software-design, software-architecture, net, aspnet-core, clean-code, dotnet, clean-architecture
+tags: software-design, software-architecture, net, aspnet-core, clean-code, dotnet, dotnetcore, clean-architecture, dotnet8, dotnet9
 
 ---
 
@@ -70,7 +70,7 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > * Jimmy Bogard.
 >     
 
-## Example API solution in C# .NET 8
+## Example API solution in C# .NET 9
 
 Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler [project template](https://github.com/nadirbad/VerticalSliceArchitecture) that showcases the Vertical Slice Architecture approach.
 
@@ -84,15 +84,17 @@ When moving toward the vertical slices we stop thinking about layers and abstrac
 
 This project repository is created based on the Clean Architecture solution template by Jason Taylor, and it uses technology choices and application business logic from this template, like:
 
-* ASP.NET API with .NET 8
+* ASP.NET API with .NET 9
     
 * CQRS with MediatR
     
 * FluentValidations
     
-* EF Core 8
+* EF Core 9
     
 * xUnit, FluentAssertions, Moq
+    
+* Result pattern for handling exceptions and errors using
     
 
 I used the Clean Architecture template because it uses the CQRS pattern with the MediatR library and vertical slices naturally fit into the commands and queries.
