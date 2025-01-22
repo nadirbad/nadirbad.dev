@@ -1,7 +1,7 @@
 ---
 title: "A Guide to Vertical Slice Architecture in C# .NET"
 seoTitle: "Vertical Slice Architecture in C# .NET - Guide and Example"
-seoDescription: "Learn how to implement Vertical Slice Architecture in C#. Explore examples, folder structures, and project setups for efficient software design."
+seoDescription: "Learn how to implement Vertical Slice Architecture in C#. Explore example, folder structures, and project setups for efficient software design."
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
@@ -70,9 +70,9 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > * Jimmy Bogard.
 >     
 
-## Example API solution in C# .NET 9
+## Example Project Template solution in C# .NET 9
 
-Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler [project template](https://github.com/nadirbad/VerticalSliceArchitecture) that showcases the Vertical Slice Architecture approach.
+Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler example project template that showcases the [Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) approach.
 
 The goal is to stop thinking about horizontal layers and start thinking about vertical slices and organize code by Features. When the code is organized by feature you get the benefits of not having to jump around projects, folders and files. Things related to given features are placed close together.
 
@@ -103,6 +103,10 @@ Another approach I took (taken from Derek Comartin) about organizing code, is to
 
 ![example-feature.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660464646530/8qGxIe2go.png align="left")
 
+## Vertical Slice Architecture and Clean Architecture
+
+For a detailed comparison between two prominent approaches of organizing code check this blog post from NDepend where Clean Architecture is compared to Vertical Slice Architecture and this [example project template](https://github.com/nadirbad/VerticalSliceArchitecture).
+
 ## Benefits of Vertical Slice Architecture
 
 By building the system around vertical slices, you can avoid making compromises between cohesion and coupling. This is achieved by keeping a low coupling between vertical slices and high cohesion within the slice.
@@ -115,7 +119,7 @@ When developing and working on features where there are fewer side effects and l
 
 When following the principle of keeping things related to each other close, the structure and navigation within the codebase become more clear and save time.
 
-## The source code
+## Example project template source code
 
 Check out the source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
 
