@@ -70,7 +70,7 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > * Jimmy Bogard.
 >     
 
-## Example Project Template solution in C# .NET 9
+## Example Vertical Slice Architecture Project solution in C# .NET 9
 
 Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler example project template that showcases the [Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) approach.
 
@@ -80,7 +80,7 @@ When moving toward the vertical slices we stop thinking about layers and abstrac
 
 ![vertical-slices.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660464625999/uAQq-c-7U.png align="left")
 
-## The change
+## The change from Clean Architecture to Vertical Slice Architecture
 
 This project repository is created based on the Clean Architecture solution template by Jason Taylor, and it uses technology choices and application business logic from this template, like:
 
@@ -119,7 +119,7 @@ When developing and working on features where there are fewer side effects and l
 
 When following the principle of keeping things related to each other close, the structure and navigation within the codebase become more clear and save time.
 
-## Example project template source code
+## Example Vertical Slice Architecture project solution source code
 
 Check out the source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
 
