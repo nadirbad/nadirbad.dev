@@ -105,7 +105,7 @@ Another approach I took (taken from Derek Comartin) about organizing code, is to
 
 ## Vertical Slice Architecture and Clean Architecture
 
-For a detailed comparison between two prominent approaches of organizing code check this blog post from NDepend where Clean Architecture is compared to Vertical Slice Architecture and this [example project template](https://github.com/nadirbad/VerticalSliceArchitecture).
+For a detailed comparison between two prominent approaches of organizing code check this [blog post from NDepend](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/) where Clean Architecture is compared to Vertical Slice Architecture and this [example project template](https://github.com/nadirbad/VerticalSliceArchitecture).
 
 ## Benefits of Vertical Slice Architecture
 
