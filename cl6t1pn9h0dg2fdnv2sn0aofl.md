@@ -1,7 +1,7 @@
 ---
-title: "A Guide to Vertical Slice Architecture in C# .NET"
-seoTitle: "Vertical Slice Architecture in C# .NET - Guide and Example"
-seoDescription: "Learn how to implement Vertical Slice Architecture in C#. Explore example, folder structures, and project setups for efficient software design."
+title: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
+seoTitle: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
+seoDescription: "Master Vertical Slice Architecture in .NET 9. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 500+ star GitHub template"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
