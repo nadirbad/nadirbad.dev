@@ -176,6 +176,12 @@ The flexibility is both the biggest strength and the biggest risk. As Jimmy Boga
 
 If you ignore this, you invite chaos. The risk of code duplication turns into reality fast. You have to actively manage shared logic. If your team doesn't know how to spot code smells, you will lose the benefits of the architecture entirely.
 
+| Benefit | Corresponding Challenge / Trade-off |
+| - | - |
+| Feature Isolation & Speed | Potential for Code Duplication: Without careful management, common logic (like validation or mapping) might be repeated across different slices. |
+| Implementation Flexibility | Risk of Inconsistency: Each slice can solve problems differently. Without team discipline and good code reviews, this can lead to inconsistent patterns across the application. |
+| Reduced Abstractions | Requires Stronger Refactoring Skills: Since there are fewer mandatory layers, developers must be skilled at identifying code smells and refactoring complex logic inside a handler to keep it clean and maintainable. |
+
 ## Example Vertical Slice Architecture project solution source code
 
 Check out my source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
