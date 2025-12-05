@@ -26,7 +26,6 @@ For example, in a web application, we might define these four layers:
 * Data Access Layer (repositories)
     
 * Infrastructure Layer (database)
-    
 
 ## The Problem with a traditional layered architecture
 
@@ -45,7 +44,6 @@ Typically if I need to change a feature in a layered application, I end up touch
 * `ViewModels/TodoItemsViewModel.cs`
     
 * `Controllers/TodoItemsController.cs`
-    
 
 Layered architecture is great for some things, but it does have major drawbacks:
 
@@ -54,7 +52,6 @@ Layered architecture is great for some things, but it does have major drawbacks:
 * Each layer is aware of the next layer down (and sometimes even a few more). This makes it very difficult to understand the "big picture" at any given time and can lead to unexpected side effects when we make changes in one part of our application.
     
 * It's often unclear where some components belong; should they be placed in Business Logic or Data Access? Do they go in both? Or maybe in the Presentation as well? These are questions that we need answers to before writing any code or else we will end up with big messes of tightly coupled spaghetti code.
-    
 
 Instead of separating based on technical concerns, Vertical Slices are about focusing on features.
 
@@ -72,6 +69,18 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 > 
 > * Jimmy Bogard.
 >     
+
+## Vertical Slice vs. Clean Architecture: Key Differences
+
+While Clean Architecture emphasizes horizontal layers (UI, Application, Domain, Infrastructure), Vertical Slice Architecture emphasizes features.
+
+| Feature | Clean Architecture (Layers) | Vertical Slice Architecture |
+| :--- | :--- | :--- |
+| Primary Unit | Layers (Projects) | Features (Slices) |
+| Coupling | High logical coupling within layers | Low coupling between features |
+| Code Sharing | Encouraged (Shared Services) | Discouraged (Duplicate > Wrong Abstraction) |
+| Change Impact | Touches multiple projects/files | Contained within one slice |
+| Best For | Enterprise standardization | Rapid development & Domain complexity |
 
 ## Example Vertical Slice Architecture Project solution in C# .NET 9
 
@@ -104,27 +113,72 @@ I used the Clean Architecture template because it uses the CQRS pattern with the
 
 Another approach I took (taken from Derek Comartin) about organizing code, is to put all code related to a given feature in a single file in most cases. With this approach we are having self-explanatory file names `ExportTodos.cs` and all related code close together: Api controller action methods, MediatR requests, MediatR handlers, validations, and DTOs. This is what it looks like:
 
-![example-feature.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660464646530/8qGxIe2go.png align="left")
+```csharp
+public record CreateTodoListCommand(string? Title) : IRequest<ErrorOr<int>>;
+
+internal sealed class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
+{
+    private readonly ApplicationDbContext _context;
+
+    public CreateTodoListCommandValidator(ApplicationDbContext context)
+    {
+        _context = context;
+
+        RuleFor(v => v.Title)
+            .NotEmpty().WithMessage("Title is required.")
+            .MaximumLength(200).WithMessage("Title must not exceed 200 characters.")
+            .MustAsync(BeUniqueTitle).WithMessage("The specified title already exists.");
+    }
+
+    private Task<bool> BeUniqueTitle(string title, CancellationToken cancellationToken)
+    {
+        return _context.TodoLists
+            .AllAsync(l => l.Title != title, cancellationToken);
+    }
+}
+
+internal sealed class CreateTodoListCommandHandler(ApplicationDbContext context) : IRequestHandler<CreateTodoListCommand, ErrorOr<int>>
+{
+    private readonly ApplicationDbContext _context = context;
+
+    public async Task<ErrorOr<int>> Handle(CreateTodoListCommand request, CancellationToken cancellationToken)
+    {
+        var todoList = new TodoList { Title = request.Title };
+        _context.TodoLists.Add(todoList);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return todoList.Id;
+    }
+}
+```
 
 ## Vertical Slice Architecture and Clean Architecture
 
-For a detailed comparison between two prominent approaches of organizing code check this [blog post from NDepend](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/) where Clean Architecture is compared to Vertical Slice Architecture and this [example project template](https://github.com/nadirbad/VerticalSliceArchitecture).
+For a detailed comparison between two prominent approaches of organizing code check this [blog post from NDepend](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/) where Clean Architecture is compared to Vertical Slice Architecture and [Vertical Slice Architecture template .NET](https://github.com/nadirbad/VerticalSliceArchitecture).
 
-## Benefits of Vertical Slice Architecture
+## Why Vertical Slices Work
 
-By building the system around vertical slices, you can avoid making compromises between cohesion and coupling. This is achieved by keeping a low coupling between vertical slices and high cohesion within the slice.
+Moving to a feature-first mindset fixes specific pain points for growing teams.
 
-Systems are developed and structured around Features and are use-case driven.
+- **Faster Delivery.** You keep all code for a feature in one place. You build, test, and ship without getting tangled in shared layers. You get business value out the door quicker.
 
-Also, most abstractions aren't needed, and we usually don't need shared abstractions like services and repositories.
+- **Easier Maintenance.** Co-locating code reduces cognitive load. You don't have to hunt through five different projects to trace how a single button works. It’s all right there.
 
-When developing and working on features where there are fewer side effects and less paralysis surrounding the change.
+- **Safer Changes.** Slices stay isolated. You can change one feature without the risk of breaking an unrelated part of the app. Your team gains the confidence to deploy more often.
 
-When following the principle of keeping things related to each other close, the structure and navigation within the codebase become more clear and save time.
+- **Intuitive Codebase.** The folder structure matches the business capabilities. A new developer can look at the project and immediately understand what the application actually does.
+
+## The Trade-offs
+
+VSA isn't a magic fix. It relies heavily on discipline.
+
+The flexibility is both the biggest strength and the biggest risk. As Jimmy Bogard notes, VSA "does assume that your team understands code smells and refactoring."
+
+If you ignore this, you invite chaos. The risk of code duplication turns into reality fast. You have to actively manage shared logic. If your team doesn't know how to spot code smells, you will lose the benefits of the architecture entirely.
 
 ## Example Vertical Slice Architecture project solution source code
 
-Check out the source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
+Check out my source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
 
 ## Inspired by
 
