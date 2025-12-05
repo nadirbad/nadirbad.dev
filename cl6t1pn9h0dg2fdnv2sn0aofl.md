@@ -10,6 +10,9 @@ tags: software-design, software-architecture, net, aspnet-core, clean-code, dotn
 
 ---
 
+Back in 2022, I shared a [GitHub template for Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture). Since then, it has garnered over 500 stars and helped countless .NET developers break free from the rigidity of 'Clean Architecture.'
+But the .NET ecosystem moves fast. With the release of .NET 9 and C# 13, implementing vertical slices is cleaner and more concise than ever. This guide is a complete 2025 refresh of my original approach, covering how to organize your monolithic solution for maximum velocity.
+
 ## Traditional Layered Architecture
 
 The first approach is the traditional layered architecture. This is a very common way to organize code and has been a standard for decades. I’m sure you have seen and used this on many projects before. A traditional layered/onion architecture approach organizes code around technical concerns in layers. In this approach, different layers are defined based on their responsibilities in the system. The layers then depend on each other so that they can collaborate and achieve their responsibilities. The dependency flow is guaranteed by forcing each layer to only depend on the ones below them (e.g., the presentation layer can only call code in the business logic layer).
