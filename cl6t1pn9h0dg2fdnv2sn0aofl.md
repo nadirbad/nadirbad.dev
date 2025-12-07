@@ -5,7 +5,8 @@ seoDescription: "Master Vertical Slice Architecture in .NET 9. The comprehensive
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1764973706150/9ce8e9e2-5930-417e-b21b-3a6cf2385cc4.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1765114328106/63b0867a-9beb-4be1-ad37-e55c0c67459e.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1765114392733/0b94b331-05c5-4be9-a0fa-dc5019876c21.png
 tags: software-design, software-architecture, net, aspnet-core, clean-code, dotnet, dotnetcore, clean-architecture, dotnet8, dotnet9
 
 ---
