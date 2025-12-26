@@ -84,6 +84,8 @@ While Clean Architecture emphasizes horizontal layers (UI, Application, Domain, 
 | Change Impact | Touches multiple projects/files | Contained within one slice |
 | Best For | Enterprise standardization | Rapid development & Domain complexity |
 
+**For a deeper comparison including migration strategies, hybrid approaches, and team-based recommendations, see [Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture)**
+
 ## Example Vertical Slice Architecture Project solution in C# .NET 9
 
 Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler example project template that showcases the [Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) approach.
