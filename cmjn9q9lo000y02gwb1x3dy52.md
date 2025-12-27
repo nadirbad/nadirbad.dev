@@ -17,7 +17,7 @@ This comparison applies equally to Onion and Hexagonal architectures, which shar
 
 So which one fits your project? Let's break it down.
 
-*This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 530+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/)*.
+*This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 530+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
 ## Contents
 
