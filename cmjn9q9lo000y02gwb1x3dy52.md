@@ -21,27 +21,6 @@ So which one fits your project? Let's break it down.
 
 > **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) (530+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
-## Contents
-
-* [Clean Architecture: The Layered Approach](#clean-architecture-the-layered-approach)
-    
-* [Vertical Slice Architecture: The Feature-First Approach](#vertical-slice-architecture-the-feature-first-approach)
-    
-* [How They Compare](#how-they-compare)
-  - [Real Example: Adding a Field](#real-example-adding-a-field)
-    
-* [When to Use Each](#when-to-use-each)
-    
-* [The Hybrid: Best of Both?](#the-hybrid-best-of-both)
-    
-* [Migrating From Clean Architecture to VSA](#migrating-from-clean-architecture-to-vsa)
-    
-* [Choosing Based on Your Team](#choosing-based-on-your-team)
-    
-* [Project Complexity Checklist](#project-complexity-checklist)
-
-![Clean Architecture vs Vertical Slice Architecture comparison infographic showing layered approach versus feature-first approach with decision guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1766775679779/81d5b107-b07f-4189-a5ee-f710c9b06659.png align="center")
-
 ## Clean Architecture: The Layered Approach
 
 Clean Architecture (CA), popularized by Robert C. Martin, organizes code through concentric layers. The key rule: all dependencies point inward toward the core.
