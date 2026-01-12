@@ -209,9 +209,9 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 
 | If your project is... | Consider... | Example Template |
 | :--- | :--- | :--- |
-| Primarily CRUD / Data-driven | VSA or simple N-Tier | [My VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Rich, complex business rules | Clean Architecture | [Jason Taylor's Clean Architecture](https://github.com/jasontaylordev/CleanArchitecture) |
-| Rapidly changing features | VSA | [My VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Rapidly changing features | VSA | [VSA template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Long-term (5+ years) maintanance | Hybrid approach | Both patterns can evolve |
 | Needs independent scalability, headed toward microservices | VSA (slices become services) | Vertical slices map to service boundaries |
 
