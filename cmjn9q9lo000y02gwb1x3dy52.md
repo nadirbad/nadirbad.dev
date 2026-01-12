@@ -219,7 +219,7 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 
 There's no universal winner. Clean Architecture protects complexity but adds ceremony. VSA reduces ceremony but requires discipline.
 
-Start simple. If you're building a straightforward CRUD API, VSA will get you moving faster. If you're modeling a complex domain with lots of business rules, Clean Architecture's protected core is worth the overhead.
+Start simple. If you're building a straightforward APIs, VSA will get you moving faster. If you're modeling a complex domain with lots of business rules, Clean Architecture's protected core is worth the overhead.
 
 And don't be afraid to mix them. The best architectures I've seen treat this as a spectrum, not a binary choice.
 
