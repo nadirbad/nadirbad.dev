@@ -11,13 +11,15 @@ tags: software-development, software-architecture, dotnet, clean-architecture, v
 
 ---
 
-Project structure shapes everything: onboarding speed, maintainability, how fast you ship features. For years, Clean Architecture (and its cousins Onion and Hexagonal) was the default. But Vertical Slice Architecture (VSA) has become a serious alternative, and I've watched teams argue about this choice more than almost anything else.
+Project structure shapes everything: onboarding speed, maintainability, how fast you ship features. For years, Clean Architecture (and its cousins Onion and Hexagonal) was the default. But Vertical Slice Architecture (VSA) has become a serious alternative, and I've watched teams argue about this more than almost anything else.
 
 This comparison applies equally to Onion and Hexagonal architectures, which share Clean Architecture's layered philosophy. The feature-based vs layered architecture debate comes down to where you want your coupling.
 
 So which one fits your project? Let's break it down.
 
 *This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 530+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
+
+> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) (530+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
 ## Contents
 
@@ -26,8 +28,9 @@ So which one fits your project? Let's break it down.
 * [Vertical Slice Architecture: The Feature-First Approach](#vertical-slice-architecture-the-feature-first-approach)
     
 * [How They Compare](#how-they-compare)
+  - [Real Example: Adding a Field](#real-example-adding-a-field)
     
-* [When to Pick Each](#when-to-pick-each)
+* [When to Use Each](#when-to-use-each)
     
 * [The Hybrid: Best of Both?](#the-hybrid-best-of-both)
     
@@ -35,7 +38,7 @@ So which one fits your project? Let's break it down.
     
 * [Choosing Based on Your Team](#choosing-based-on-your-team)
     
-* [Quick Reference](#quick-reference)
+* [Project Complexity Checklist](#project-complexity-checklist)
 
 ![Clean Architecture vs Vertical Slice Architecture comparison infographic showing layered approach versus feature-first approach with decision guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1766775679779/81d5b107-b07f-4189-a5ee-f710c9b06659.png align="center")
 
@@ -76,19 +79,67 @@ VSA takes the opposite bet, following what's sometimes called the **code localit
 
 ### Real Example: Adding a Field
 
-Say you need to add a field to "Get Weather Forecast."
+Let's trace what happens when you need to add a field to a feature in both architectures. I'll use real examples from production templates.
 
-**In Clean Architecture:** You're touching 5-7 files across 3-4 projects. The ViewModel in Web, the DTO in Application, the Entity in Domain, the Repository in Infrastructure. Hope you remembered them all.
+**In Clean Architecture** ([Jason Taylor's template](https://github.com/jasontaylordev/CleanArchitecture)):
 
-**In VSA:** Open `GetForecasts.cs`, add the field to the request, handler, and response. Done. New features add new code instead of modifying shared service classes.
+To add a "Tags" field to the TodoItem feature, you touch **8-10 files across 4 projects**:
+
+1. [`Domain/Entities/TodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Domain/Entities/TodoItem.cs) — Add property to entity
+2. [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs) — Add to command
+3. [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs) — Add validation rule
+4. [`Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs) — Add to update command
+5. [`Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs) — Add to list DTO
+6. [`Application/TodoLists/Queries/GetTodos/TodoItemDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoLists/Queries/GetTodos/TodoItemDto.cs) — Add to detail DTO
+7. [`Infrastructure/Data/Configurations/TodoItemConfiguration.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Infrastructure/Data/Configurations/TodoItemConfiguration.cs) — Add EF Core mapping
+8. [`Web/Endpoints/TodoItems.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Web/Endpoints/TodoItems.cs) — Update endpoint mappings (if needed)
+9. Plus corresponding test files in `tests/Application.FunctionalTests/TodoItems/`
+
+You also need to rebuild 4 separate projects (Domain, Application, Infrastructure, Web) for the change to compile.
+
+**In VSA** ([my template](https://github.com/nadirbad/VerticalSliceArchitecture)):
+
+To add a "CancellationCategory" enum field to the CancelAppointment feature, you touch **2-3 files**:
+
+1. [`Application/Domain/Appointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Domain/Appointment.cs) — Add property and update domain method
+2. [`Application/Scheduling/CancelAppointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Scheduling/CancelAppointment.cs) — Update command, validator, handler
+3. [`Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs) — Add EF mapping (if needed)
+
+```csharp
+// In Appointment.cs - Add property
+public CancellationCategory? Category { get; private set; }
+
+// Update Cancel method signature
+public void Cancel(string reason, CancellationCategory category, DateTime? cancelledAtUtc = null)
+{
+    // ... existing validation ...
+    Category = category;
+}
+
+// In CancelAppointment.cs - Update command
+public record Command(Guid AppointmentId, string Reason, CancellationCategory Category);
+
+// Add validation
+RuleFor(v => v.Category).IsInEnum();
+
+// Use in handler
+appointment.Cancel(request.Reason, request.Category);
+
+// In AppointmentConfiguration.cs (optional - only if custom mapping needed)
+builder.Property(a => a.Category).HasConversion<int>();
+```
+
+The entire request/response flow lives in one cohesive area. Domain model, slice logic, and persistence config all sit in the Application project.
 
 *Change impact: CA scatters changes across layers; VSA contains them in one folder.*
 
 ### Testing
 
-Clean Architecture tends to be **mock-heavy**. Every layer hides behind interfaces, so your unit tests often end up testing mocks of the layer below. You're testing the wiring, not the behavior.
+Clean Architecture is **mock-heavy**. Every layer hides behind interfaces, so your unit tests often end up testing mocks of the layer below. You're testing the wiring, not the behavior.
 
 VSA leans toward **integration testing**. A slice is a self-contained request/response, so the most useful test exercises the full slice from API to database. Save unit tests for the shared domain model, not the handlers.
+
+Why the difference? In Clean Architecture, the layering makes it natural to test each layer in isolation. In VSA, the handler is so thin (mostly orchestration) that integration tests give you more bang for your buck. You save unit tests for the parts with complex logic domain and validators.
 
 ## When to Pick Each
 
@@ -146,23 +197,23 @@ This feels wrong at first. You've been taught that more abstraction is better. B
 
 Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while behaviors handle the cross-cutting stuff in one place. You get consistency without polluting every handler.
 
-*For implementation details, see* [Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture)*
+*For implementation details, see* [Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture).
 
 ## Choosing Based on Your Team
 
 **Junior-heavy teams:** Lean toward Clean Architecture. The prescriptive rules ("Controller calls Service") keep code organized while people learn. The structure does some of the thinking for them.
 
-**Experienced teams:** VSA gives you speed. Senior developers have the judgment to refactor procedural code into a rich domain model when it makes sense, and to leave simple CRUD operations simple.
+**Experienced teams:** VSA gives you speed. Senior developers have the judgment to refactor procedural code into a rich domain model and abstractions when it makes sense, and to leave simple CRUD operations simple.
 
-## Quick Reference
+## Project Complexity Checklist
 
-| **If your project is...** | **Consider...** |
-| --- | --- |
-| Mostly CRUD | VSA or simple N-Tier |
-| Complex business rules | Clean Architecture |
-| Rapidly changing features | VSA |
-| Long-term (5+ years) | Hybrid approach |
-| Headed toward microservices | VSA (slices become services) |
+| If your project is... | Consider... | Example Template |
+| :--- | :--- | :--- |
+| Primarily CRUD / Data-driven | VSA or simple N-Tier | [My VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Rich, complex business rules | Clean Architecture | [Jason Taylor's Clean Architecture](https://github.com/jasontaylordev/CleanArchitecture) |
+| Rapidly changing features | VSA | [My VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Long-term (5+ years) maintanance | Hybrid approach | Both patterns can evolve |
+| Needs independent scalability, headed toward microservices | VSA (slices become services) | Vertical slices map to service boundaries |
 
 ## The Bottom Line
 
