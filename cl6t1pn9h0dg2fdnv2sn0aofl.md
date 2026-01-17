@@ -115,7 +115,7 @@ This project repository is created based on the Clean Architecture solution temp
 
 I used the Clean Architecture template because it uses the CQRS pattern with the MediatR library and vertical slices naturally fit into the commands and queries.
 
-Another approach I took (taken from Derek Comartin) about organizing code, is to put all code related to a given feature in a single file in most cases. With this approach we are having self-explanatory file names `ExportTodos.cs` and all related code close together: Api controller action methods, MediatR requests, MediatR handlers, validations, and DTOs. This is what it looks like:
+nother approach I took (taken from Derek Comartin) about organizing code, is to put all code related to a given feature in a single file in most cases. With this approach we are having self-explanatory file names `BookAppointment.cs` and all related code close together: Api controller action methods, MediatR requests, MediatR handlers, validations, and DTOs. This is what it looks like:
 
 ```csharp
 public static class BookAppointment
