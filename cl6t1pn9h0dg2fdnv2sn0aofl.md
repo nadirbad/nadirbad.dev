@@ -1,7 +1,7 @@
 ---
 title: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
 seoTitle: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
-seoDescription: "Master Vertical Slice Architecture in .NET 9. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 500+ star GitHub template"
+seoDescription: "Master Vertical Slice Architecture in .NET 9. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 540+ star GitHub template"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
@@ -118,40 +118,58 @@ I used the Clean Architecture template because it uses the CQRS pattern with the
 Another approach I took (taken from Derek Comartin) about organizing code, is to put all code related to a given feature in a single file in most cases. With this approach we are having self-explanatory file names `ExportTodos.cs` and all related code close together: Api controller action methods, MediatR requests, MediatR handlers, validations, and DTOs. This is what it looks like:
 
 ```csharp
-public record CreateTodoListCommand(string? Title) : IRequest<ErrorOr<int>>;
-
-internal sealed class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
+public static class BookAppointment
 {
-    private readonly ApplicationDbContext _context;
+    public record Command(
+        Guid PatientId,
+        Guid DoctorId,
+        DateTimeOffset Start,
+        DateTimeOffset End,
+        string? Notes) : IRequest<ErrorOr<Result>>;
 
-    public CreateTodoListCommandValidator(ApplicationDbContext context)
+    public record Result(Guid Id, DateTime StartUtc, DateTime EndUtc);
+
+    internal sealed class Validator : AbstractValidator<Command>
     {
-        _context = context;
-
-        RuleFor(v => v.Title)
-            .NotEmpty().WithMessage("Title is required.")
-            .MaximumLength(200).WithMessage("Title must not exceed 200 characters.")
-            .MustAsync(BeUniqueTitle).WithMessage("The specified title already exists.");
+        public Validator()
+        {
+            RuleFor(v => v.PatientId).NotEmpty();
+            RuleFor(v => v.DoctorId).NotEmpty();
+            RuleFor(v => v.Start).LessThan(v => v.End)
+                .WithMessage("Start time must be before end time");
+            RuleFor(v => v.Start)
+                .Must(start => start > DateTimeOffset.UtcNow.AddMinutes(30))
+                .WithMessage("Appointment must be scheduled at least 30 minutes in advance");
+        }
     }
 
-    private Task<bool> BeUniqueTitle(string title, CancellationToken cancellationToken)
+    internal sealed class Handler(ApplicationDbContext context)
+        : IRequestHandler<Command, ErrorOr<Result>>
     {
-        return _context.TodoLists
-            .AllAsync(l => l.Title != title, cancellationToken);
-    }
-}
+        public async Task<ErrorOr<Result>> Handle(Command request, CancellationToken ct)
+        {
+            var startUtc = request.Start.UtcDateTime;
+            var endUtc = request.End.UtcDateTime;
 
-internal sealed class CreateTodoListCommandHandler(ApplicationDbContext context) : IRequestHandler<CreateTodoListCommand, ErrorOr<int>>
-{
-    private readonly ApplicationDbContext _context = context;
+            // Check for overlapping appointments
+            var hasConflict = await context.Appointments
+                .AnyAsync(a => a.DoctorId == request.DoctorId
+                    && a.Status == AppointmentStatus.Scheduled
+                    && a.StartUtc < endUtc && a.EndUtc > startUtc, ct);
 
-    public async Task<ErrorOr<int>> Handle(CreateTodoListCommand request, CancellationToken cancellationToken)
-    {
-        var todoList = new TodoList { Title = request.Title };
-        _context.TodoLists.Add(todoList);
-        await _context.SaveChangesAsync(cancellationToken);
+            if (hasConflict)
+                return Error.Conflict("Appointment.Conflict", 
+                    "Doctor has a conflicting appointment");
 
-        return todoList.Id;
+            // Domain factory method enforces invariants and raises domain events
+            var appointment = Appointment.Schedule(
+                request.PatientId, request.DoctorId, startUtc, endUtc, request.Notes);
+
+            context.Appointments.Add(appointment);
+            await context.SaveChangesAsync(ct);
+
+            return new Result(appointment.Id, appointment.StartUtc, appointment.EndUtc);
+        }
     }
 }
 ```
