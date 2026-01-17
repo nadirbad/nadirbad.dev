@@ -174,6 +174,8 @@ public static class BookAppointment
 }
 ```
 
+**Want step-by-step setup instructions?** See the [Quick Start Guide](/vertical-slice-architecture-template-quickstart) to clone, configure, and run the template in minutes.
+
 ## Vertical Slice Architecture and Clean Architecture
 
 For a detailed comparison between two prominent approaches of organizing code check this [blog post from NDepend](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/) where Clean Architecture is compared to Vertical Slice Architecture and [Vertical Slice Architecture template .NET](https://github.com/nadirbad/VerticalSliceArchitecture).
