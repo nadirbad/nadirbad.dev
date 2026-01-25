@@ -15,6 +15,8 @@ I've tried all the common approaches. Some blew up at scale. Others worked fine 
 
 The choice depends on your team size, domain complexity, and how much ceremony you're willing to tolerate.
 
+*This article is part of the [Vertical Slice Architecture Series](/vertical-slice-architecture-dotnet), which covers implementation patterns, architecture comparisons, and hands-on guides.*
+
 ## Why Folder Structure Matters in VSA
 
 Vertical Slice Architecture promises that code which changes together lives together. Your folder structure is what makes that promise real.
@@ -324,7 +326,7 @@ There's no universally correct answer. The best structure is the one your team c
 
 Start with the single-file approach (Approach 2) if you're unsure. It delivers most of the VSA benefits with minimal overhead. You can always refactor toward feature folders or domain organization as your application grows.
 
-For a deeper dive into Vertical Slice Architecture itself, including how it compares to Clean Architecture and when to choose each - see the [comprehensive guide](/vertical-slice-architecture-dotnet) or [the detailed comparison](/vertical-slice-vs-clean-architecture).
+For a deeper dive into Vertical Slice Architecture itself—including CQRS patterns, MediatR setup, and testing strategies—see [Vertical Slice Architecture in .NET 10: The Ultimate Guide](/vertical-slice-architecture-dotnet) or explore [how VSA compares to Clean Architecture](/vertical-slice-vs-clean-architecture).
 
 ---
 
