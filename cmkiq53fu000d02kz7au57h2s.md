@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with the Vertical Slice Architecture Template for .NET 9"
+title: "Getting Started with the Vertical Slice Architecture Template for .NET 10"
 seoTitle: "Vertical Slice Architecture Template for .NET 9: Quick Start Guide"
 seoDescription: "Get started with the Vertical Slice Architecture template for .NET 9. Clone, configure, and run a production-ready healthcare API in minutes."
 datePublished: Sat Jan 17 2026 19:52:35 GMT+0000 (Coordinated Universal Time)
@@ -29,24 +29,24 @@ The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalS
 
 **Tech stack:**
 
-- .NET 9 Minimal APIs
+- .NET 10 Minimal APIs
 - MediatR for request/response pattern
 - FluentValidation for declarative validation
 - ErrorOr for result pattern error handling
-- Entity Framework Core 9 (in-memory or SQL Server)
+- Entity Framework Core 10 (in-memory or SQL Server)
 - xUnit + FluentAssertions for testing
 
 The template has over 540 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
 
 ## Prerequisites
 
-### .NET 9 SDK
+### .NET 10 SDK
 
 Download from [dot.net](https://dot.net/download). Verify your installation:
 
 ```bash
 dotnet --version
-# Should output 9.0.x
+# Should output 10.0.x
 ```
 
 ### IDE Options
@@ -157,8 +157,7 @@ src/
     └── Infrastructure/
         └── Persistence/          # EF Core DbContext
 ```
-
-Notice the `Scheduling/` folder. Each file is a complete feature—command, validator, handler, and endpoint in one place. No jumping between Controllers, Services, and Repositories folders.
+Notice the `Scheduling/` folder. Each file is a complete feature—command, validator, handler, and endpoint in one place. No jumping between Controllers, Services, and Repositories folders. For a deeper dive into folder organization options, see [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure).
 
 ### Feature Anatomy
 
@@ -500,7 +499,8 @@ options.AddOpenBehavior(typeof(LoggingBehaviour<,>));
 From here:
 
 - **Understand the theory**: Read [Vertical Slice Architecture in .NET: The Ultimate Guide](/vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
-- **Compare alternatives**: See [Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture) if you're deciding between patterns
+- **Compare alternatives**: See [Vertical Slice vs. Clean Architecture](/vertical-slice-vs-clean-architecture) if you're deciding between patterns
+- **Explore folder options**: Check out [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) to see different organization strategies
 - **Contribute**: The [template repo](https://github.com/nadirbad/VerticalSliceArchitecture) welcomes issues and PRs
 
 The template is a starting point, not a framework. Take what works for your domain. Skip what doesn't.
