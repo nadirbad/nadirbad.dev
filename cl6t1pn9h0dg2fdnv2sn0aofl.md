@@ -1,19 +1,19 @@
 ---
-title: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
-seoTitle: "Vertical Slice Architecture in .NET 9: The Ultimate Guide (2025)"
-seoDescription: "Master Vertical Slice Architecture in .NET 9. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 540+ star GitHub template"
+title: "Vertical Slice Architecture in .NET 10: The Ultimate Guide (2026)"
+seoTitle: "Vertical Slice Architecture in .NET 10: The Ultimate Guide (2026)"
+seoDescription: "Master Vertical Slice Architecture in .NET 10. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 540+ star GitHub template"
 datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1765114328106/63b0867a-9beb-4be1-ad37-e55c0c67459e.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1765114392733/0b94b331-05c5-4be9-a0fa-dc5019876c21.png
-tags: software-design, software-architecture, net, aspnet-core, clean-code, dotnet, dotnetcore, clean-architecture, dotnet8, dotnet9
+tags: software-design, software-architecture, net, aspnet-core, clean-code, dotnet, dotnetcore, clean-architecture, dotnet8, dotnet9, vertical-slice-architecture, dotnet-10
 
 ---
 
 I shared a [GitHub template for Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) back in 2022. It reached more then 500 stars and helped developers move past the rigidity of Clean Architecture.
 
-But tools change. .NET 9 and C# 13 make vertical slices cleaner and easier to write. I updated my approach for 2025. This guide shows you how to organize a monolith for speed.
+But tools change. .NET 10 and C# 14 make vertical slices cleaner and easier to write. I updated my approach for 2026. This guide shows you how to organize a monolith for speed.
 
 ## Traditional Layered Architecture
 
@@ -85,6 +85,8 @@ While Clean Architecture emphasizes horizontal layers (UI, Application, Domain, 
 | Best For | Enterprise standardization | Rapid development & Domain complexity |
 
 **For a deeper comparison including migration strategies, hybrid approaches, and team-based recommendations, see [Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture)**
+
+**Looking for folder organization patterns?** See the [VSA folder structure guide](/vertical-slice-architecture-folder-structure) comparing 4 different approaches.
 
 ## Example Vertical Slice Architecture Project solution in C# .NET 9
 
@@ -208,7 +210,17 @@ If you ignore this, you invite chaos. The risk of code duplication turns into re
 
 ## Example Vertical Slice Architecture project solution source code
 
-Check out my source code on [GitHub](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
+Check out my source code [Vertical Slice Architecture Template](https://github.com/nadirbad/VerticalSliceArchitecture) for more info. If you like this please give a star to the repository :).
+
+## Related Reading
+
+This article is part of the **Vertical Slice Architecture Series**:
+
+* **[Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture)** — Detailed comparison with real code examples, migration strategies, and decision framework
+* **[VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure)** — How to organize your feature folders for maintainability
+* **[Getting Started Guide](/vertical-slice-architecture-template-quickstart)** — Clone, configure, and run the template in minutes
+
+**Source Code:** [Vertical Slice Architecture Template](https://github.com/nadirbad/VerticalSliceArchitecture) on GitHub (540+ stars)
 
 ## Inspired by
 
