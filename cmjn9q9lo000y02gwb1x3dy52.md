@@ -156,7 +156,7 @@ Here's what I've seen work in practice: organize your top-level structure by fea
 
 You don't have to pick one religion. Use the structure that fits the complexity at hand.
 
-*For detailed folder organization patterns, see* [*VSA Folder Structure Best Practices*](/vertical-slice-architecture-folder-structure) *(coming soon).*
+*For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](/vertical-slice-architecture-folder-structure).
 
 ## Migrating From Clean Architecture to VSA
 
@@ -209,6 +209,8 @@ And don't be afraid to mix them. The best architectures I've seen treat this as 
 
 **New to the template?** Start with the [Quick Start Guide](/vertical-slice-architecture-template-quickstart) to get the healthcare API running in minutes.
 
-**Ready to try VSA?** Check out my [Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture), a production-ready starting point with healthcare domain examples and 500+ GitHub stars.
+**Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) for practical patterns.
 
-**Want the full picture?** Read the [Complete Guide to Vertical Slice Architecture](/vertical-slice-architecture-dotnet) for implementation details, folder structure, MediatR patterns, and testing strategies.
+**Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (540+ stars) — a production-ready starting point with healthcare domain examples.
+
+**Want the full picture?** Read the [Complete Guide to Vertical Slice Architecture](/vertical-slice-architecture-dotnet) for implementation details, MediatR patterns, and testing strategies.
