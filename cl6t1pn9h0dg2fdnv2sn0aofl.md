@@ -2,7 +2,7 @@
 title: "Vertical Slice Architecture in .NET 10: The Ultimate Guide (2026)"
 seoTitle: "Vertical Slice Architecture in .NET 10: The Ultimate Guide (2026)"
 seoDescription: "Master Vertical Slice Architecture in .NET 10. The comprehensive guide covering feature folders, CQRS, and MediatR-based on the 540+ star GitHub template"
-datePublished: Fri Apr 22 2022 13:30:36 GMT+0000 (Coordinated Universal Time)
+datePublished: 2022-04-22T13:30:36.000Z
 cuid: cl6t1pn9h0dg2fdnv2sn0aofl
 slug: vertical-slice-architecture-dotnet
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1765114328106/63b0867a-9beb-4be1-ad37-e55c0c67459e.png
