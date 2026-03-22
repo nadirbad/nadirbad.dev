@@ -2,7 +2,7 @@
 title: "Vertical Slice Architecture Folder Structure: 4 Approaches Compared"
 seoTitle: "VSA Folder Structure: 4 .NET Project Organization Approaches"
 seoDescription: "Compare 4 different folder structure approaches for Vertical Slice Architecture in .NET. Includes code examples and recommendations for organizing features."
-datePublished: Sun Jan 25 2026 17:43:49 GMT+0000 (Coordinated Universal Time)
+datePublished: 2026-01-25T17:43:49.690Z
 cuid: cmku12bay000202ju618ohd9h
 slug: vertical-slice-architecture-folder-structure-4-approaches-compared
 tags: software-development, software-architecture, software-engineering, dotnet, project-structure, vertical-slice-architecture
