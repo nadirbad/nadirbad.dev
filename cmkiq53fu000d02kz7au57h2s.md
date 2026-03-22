@@ -2,7 +2,7 @@
 title: "Getting Started with the Vertical Slice Architecture Template for .NET 10"
 seoTitle: "Vertical Slice Architecture Template for .NET 9: Quick Start Guide"
 seoDescription: "Get started with the Vertical Slice Architecture template for .NET 9. Clone, configure, and run a production-ready healthcare API in minutes."
-datePublished: Sat Jan 17 2026 19:52:35 GMT+0000 (Coordinated Universal Time)
+datePublished: 2026-01-17T19:52:35.754Z
 cuid: cmkiq53fu000d02kz7au57h2s
 slug: vertical-slice-architecture-template-quickstart
 tags: software-design, software-architecture, software-engineering, dotnet, dotnetcore, c-sharp, aspnetcore, dotnet9
