@@ -2,7 +2,7 @@
 title: "How to Setup and Use NDepend on macOS for .NET Development"
 seoTitle: "How to Set Up and Use NDepend on macOS for .NET | Step-by-Step Guide"
 seoDescription: "Learn how to set up and use NDepend on macOS for .NET projects. A step-by-step guide to running static code analysis, improving code quality, and exploring"
-datePublished: Tue Dec 10 2024 21:35:14 GMT+0000 (Coordinated Universal Time)
+datePublished: 2024-12-10T21:35:14.503Z
 cuid: cm4izcsw7000d08l9g8b26ycp
 slug: how-to-setup-and-use-ndepend-on-macos-for-net-development
 tags: dotnet, ndepend
