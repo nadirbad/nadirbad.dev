@@ -194,4 +194,4 @@ But here's the question I hear most often after teams run their first workshop: 
 
 And it's exactly what I'll cover in the next article in this series.
 
-If you're planning your first Event Storming session and want a second pair of eyes on your approach, [book a free discovery call](https://www.linkedin.com/in/nadir-badnjevic/) and I'll help you set it up right.
+If you're planning your first Event Storming session and want a second pair of eyes on your approach, [contact me directly](https://www.linkedin.com/in/nadir-badnjevic/) and I'll help you set it up right.
