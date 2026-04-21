@@ -21,13 +21,14 @@ The first approach is the traditional layered architecture. This is a very commo
 
 For example, in a web application, we might define these four layers:
 
-* Presentation Layer (controllers)
+*   Presentation Layer (controllers)
     
-* Business Logic Layer (services)
+*   Business Logic Layer (services)
     
-* Data Access Layer (repositories)
+*   Data Access Layer (repositories)
     
-* Infrastructure Layer (database)
+*   Infrastructure Layer (database)
+    
 
 ## The Problem with a traditional layered architecture
 
@@ -37,23 +38,25 @@ The tight coupling also makes it more difficult for developers working on differ
 
 Typically if I need to change a feature in a layered application, I end up touching different layers of the application and navigating through piles of projects, folders and files. For example for a simple change in a given feature, you could be editing more than 5 files in all the layers:
 
-* `Domain/TodoItem.cs`
+*   `Domain/TodoItem.cs`
     
-* `Repositories/TodoItemsRepository.cs`
+*   `Repositories/TodoItemsRepository.cs`
     
-* `Services/TodoItemsService.cs`
+*   `Services/TodoItemsService.cs`
     
-* `ViewModels/TodoItemsViewModel.cs`
+*   `ViewModels/TodoItemsViewModel.cs`
     
-* `Controllers/TodoItemsController.cs`
+*   `Controllers/TodoItemsController.cs`
+    
 
 Layered architecture is great for some things, but it does have major drawbacks:
 
-* Tight coupling between layers. You can't easily swap out a layer without rewriting code in other layers. This means that if you want to make a change to one feature, you might have to touch several different layers.
+*   Tight coupling between layers. You can't easily swap out a layer without rewriting code in other layers. This means that if you want to make a change to one feature, you might have to touch several different layers.
     
-* Each layer is aware of the next layer down (and sometimes even a few more). This makes it very difficult to understand the "big picture" at any given time and can lead to unexpected side effects when we make changes in one part of our application.
+*   Each layer is aware of the next layer down (and sometimes even a few more). This makes it very difficult to understand the "big picture" at any given time and can lead to unexpected side effects when we make changes in one part of our application.
     
-* It's often unclear where some components belong; should they be placed in Business Logic or Data Access? Do they go in both? Or maybe in the Presentation as well? These are questions that we need answers to before writing any code or else we will end up with big messes of tightly coupled spaghetti code.
+*   It's often unclear where some components belong; should they be placed in Business Logic or Data Access? Do they go in both? Or maybe in the Presentation as well? These are questions that we need answers to before writing any code or else we will end up with big messes of tightly coupled spaghetti code.
+    
 
 Instead of separating based on technical concerns, Vertical Slices are about focusing on features.
 
@@ -69,7 +72,7 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 
 > We can start simple (Transaction Script) and simply refactor to the patterns that emerge from code smells we see in the business logic.
 > 
-> * Jimmy Bogard.
+> *   Jimmy Bogard.
 >     
 
 ## Vertical Slice vs. Clean Architecture: Key Differences
@@ -77,16 +80,16 @@ The Vertical Slice architecture approach is a good starting point that can be ev
 While Clean Architecture emphasizes horizontal layers (UI, Application, Domain, Infrastructure), Vertical Slice Architecture emphasizes features.
 
 | Feature | Clean Architecture (Layers) | Vertical Slice Architecture |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | Primary Unit | Layers (Projects) | Features (Slices) |
 | Coupling | High logical coupling within layers | Low coupling between features |
 | Code Sharing | Encouraged (Shared Services) | Discouraged (Duplicate > Wrong Abstraction) |
 | Change Impact | Touches multiple projects/files | Contained within one slice |
 | Best For | Enterprise standardization | Rapid development & Domain complexity |
 
-**For a deeper comparison including migration strategies, hybrid approaches, and team-based recommendations, see [Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture)**
+**For a deeper comparison including migration strategies, hybrid approaches, and team-based recommendations, see** [**Vertical Slice vs. Clean Architecture: Which Should You Choose?**](/vertical-slice-vs-clean-architecture)
 
-**Looking for folder organization patterns?** See the [VSA folder structure guide](/vertical-slice-architecture-folder-structure) comparing 4 different approaches.
+**Looking for folder organization patterns?** See the [VSA folder structure guide](/vertical-slice-architecture-folder-structure-4-approaches-compared) comparing 4 different approaches.
 
 ## Example Vertical Slice Architecture Project solution in C# .NET 9
 
@@ -102,17 +105,17 @@ When moving toward the vertical slices we stop thinking about layers and abstrac
 
 This project repository is created based on the Clean Architecture solution template by Jason Taylor, and it uses technology choices and application business logic from this template, like:
 
-* ASP.NET API with .NET 9
+*   ASP.NET API with .NET 9
     
-* CQRS with MediatR
+*   CQRS with MediatR
     
-* FluentValidations
+*   FluentValidations
     
-* EF Core 9
+*   EF Core 9
     
-* xUnit, FluentAssertions, Moq
+*   xUnit, FluentAssertions, Moq
     
-* Result pattern for handling exceptions and errors using
+*   Result pattern for handling exceptions and errors using
     
 
 I used the Clean Architecture template because it uses the CQRS pattern with the MediatR library and vertical slices naturally fit into the commands and queries.
@@ -186,13 +189,14 @@ For a detailed comparison between two prominent approaches of organizing code ch
 
 Moving to a feature-first mindset fixes specific pain points for growing teams.
 
-- **Faster Delivery.** You keep all code for a feature in one place. You build, test, and ship without getting tangled in shared layers. You get business value out the door quicker.
-
-- **Easier Maintenance.** Co-locating code reduces cognitive load. You don't have to hunt through five different projects to trace how a single button works. It’s all right there.
-
-- **Safer Changes.** Slices stay isolated. You can change one feature without the risk of breaking an unrelated part of the app. Your team gains the confidence to deploy more often.
-
-- **Intuitive Codebase.** The folder structure matches the business capabilities. A new developer can look at the project and immediately understand what the application actually does.
+*   **Faster Delivery.** You keep all code for a feature in one place. You build, test, and ship without getting tangled in shared layers. You get business value out the door quicker.
+    
+*   **Easier Maintenance.** Co-locating code reduces cognitive load. You don't have to hunt through five different projects to trace how a single button works. It’s all right there.
+    
+*   **Safer Changes.** Slices stay isolated. You can change one feature without the risk of breaking an unrelated part of the app. Your team gains the confidence to deploy more often.
+    
+*   **Intuitive Codebase.** The folder structure matches the business capabilities. A new developer can look at the project and immediately understand what the application actually does.
+    
 
 ## The Trade-offs
 
@@ -203,7 +207,7 @@ The flexibility is both the biggest strength and the biggest risk. As Jimmy Boga
 If you ignore this, you invite chaos. The risk of code duplication turns into reality fast. You have to actively manage shared logic. If your team doesn't know how to spot code smells, you will lose the benefits of the architecture entirely.
 
 | Benefit | Corresponding Challenge / Trade-off |
-| - | - |
+| --- | --- |
 | Feature Isolation & Speed | Potential for Code Duplication: Without careful management, common logic (like validation or mapping) might be repeated across different slices. |
 | Implementation Flexibility | Risk of Inconsistency: Each slice can solve problems differently. Without team discipline and good code reviews, this can lead to inconsistent patterns across the application. |
 | Reduced Abstractions | Requires Stronger Refactoring Skills: Since there are fewer mandatory layers, developers must be skilled at identifying code smells and refactoring complex logic inside a handler to keep it clean and maintainable. |
@@ -216,16 +220,19 @@ Check out my source code [Vertical Slice Architecture Template](https://github.c
 
 This article is part of the **Vertical Slice Architecture Series**:
 
-* **[Vertical Slice vs. Clean Architecture: Which Should You Choose?](/vertical-slice-vs-clean-architecture)** — Detailed comparison with real code examples, migration strategies, and decision framework
-* **[VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure)** — How to organize your feature folders for maintainability
-* **[Getting Started Guide](/vertical-slice-architecture-template-quickstart)** — Clone, configure, and run the template in minutes
+*   [**Vertical Slice vs. Clean Architecture: Which Should You Choose?**](/vertical-slice-vs-clean-architecture) — Detailed comparison with real code examples, migration strategies, and decision framework
+    
+*   [**VSA Folder Structure: 4 Approaches Compared**](/vertical-slice-architecture-folder-structure-4-approaches-compared) — How to organize your feature folders for maintainability
+    
+*   [**Getting Started Guide**](/vertical-slice-architecture-template-quickstart) — Clone, configure, and run the template in minutes
+    
 
 **Source Code:** [Vertical Slice Architecture Template](https://github.com/nadirbad/VerticalSliceArchitecture) on GitHub (540+ stars)
 
 ## Inspired by
 
-* [Clean Architecture solution template by Jason Taylor](https://github.com/jasontaylordev/CleanArchitecture)
+*   [Clean Architecture solution template by Jason Taylor](https://github.com/jasontaylordev/CleanArchitecture)
     
-* [Vertical slice architecture by Jimmy Bogard](https://jimmybogard.com/vertical-slice-architecture/)
+*   [Vertical slice architecture by Jimmy Bogard](https://jimmybogard.com/vertical-slice-architecture/)
     
-* [Organize code by Feature using Vertical Slices by Derek Comartin](https://codeopinion.com/organizing-code-by-feature-using-vertical-slices/)
+*   [Organize code by Feature using Vertical Slices by Derek Comartin](https://codeopinion.com/organizing-code-by-feature-using-vertical-slices/)
