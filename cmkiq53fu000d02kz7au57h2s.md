@@ -20,7 +20,7 @@ The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalS
 **Features implemented:**
 
 | Feature | Endpoint | What It Does |
-|---------|----------|--------------|
+| --- | --- | --- |
 | Book Appointment | `POST /api/appointments` | Creates appointment with conflict detection |
 | Get Appointments | `GET /api/appointments` | Filtered, paginated list |
 | Get by ID | `GET /api/appointments/{id}` | Single appointment with details |
@@ -29,14 +29,20 @@ The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalS
 
 **Tech stack:**
 
-- .NET 10 Minimal APIs
-- MediatR for request/response pattern
-- FluentValidation for declarative validation
-- ErrorOr for result pattern error handling
-- Entity Framework Core 10 (in-memory or SQL Server)
-- xUnit + FluentAssertions for testing
+*   .NET 10 Minimal APIs
+    
+*   MediatR for request/response pattern
+    
+*   FluentValidation for declarative validation
+    
+*   ErrorOr for result pattern error handling
+    
+*   Entity Framework Core 10 (in-memory or SQL Server)
+    
+*   xUnit + FluentAssertions for testing
+    
 
-The template has over 540 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
+The template has over 590 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
 
 ## Prerequisites
 
@@ -53,9 +59,12 @@ dotnet --version
 
 Pick what works for you:
 
-- **Visual Studio 2022** (17.8+) — Full IDE experience, best debugging
-- **JetBrains Rider** — Cross-platform, strong refactoring tools
-- **VS Code** — Lightweight, free
+*   **Visual Studio 2022** (17.8+) — Full IDE experience, best debugging
+    
+*   **JetBrains Rider** — Cross-platform, strong refactoring tools
+    
+*   **VS Code** — Lightweight, free
+    
 
 ### Optional: Docker for SQL Server
 
@@ -157,6 +166,7 @@ src/
     └── Infrastructure/
         └── Persistence/          # EF Core DbContext
 ```
+
 Notice the `Scheduling/` folder. Each file is a complete feature—command, validator, handler, and endpoint in one place. No jumping between Controllers, Services, and Repositories folders. For a deeper dive into folder organization options, see [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure).
 
 ### Feature Anatomy
@@ -453,11 +463,16 @@ For PostgreSQL, swap `UseSqlServer` for `UseNpgsql` and add the Npgsql.EntityFra
 
 The template focuses on scheduling, but you can add parallel domains:
 
-1. Create a new folder under `Application/` (e.g., `Billing/`)
-2. Add feature files following the same pattern
-3. Create a domain entity in `Domain/`
-4. Register endpoints in a new `BillingEndpoints.cs`
-5. Map endpoints in `Program.cs`: `app.MapBillingEndpoints()`
+1.  Create a new folder under `Application/` (e.g., `Billing/`)
+    
+2.  Add feature files following the same pattern
+    
+3.  Create a domain entity in `Domain/`
+    
+4.  Register endpoints in a new `BillingEndpoints.cs`
+    
+5.  Map endpoints in `Program.cs`: `app.MapBillingEndpoints()`
+    
 
 Keep domains isolated. Features within a domain can share its entities, but don't couple domains to each other.
 
@@ -465,8 +480,10 @@ Keep domains isolated. Features within a domain can share its entities, but don'
 
 MediatR pipeline behaviors run for every request. The template includes:
 
-- **ValidationBehaviour** — Runs FluentValidation before the handler
-- **PerformanceBehaviour** — Logs slow requests
+*   **ValidationBehaviour** — Runs FluentValidation before the handler
+    
+*   **PerformanceBehaviour** — Logs slow requests
+    
 
 Add your own in `Common/Behaviours/`:
 
@@ -498,13 +515,17 @@ options.AddOpenBehavior(typeof(LoggingBehaviour<,>));
 
 From here:
 
-- **Understand the theory**: Read [Vertical Slice Architecture in .NET: The Ultimate Guide](/vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
-- **Compare alternatives**: See [Vertical Slice vs. Clean Architecture](/vertical-slice-vs-clean-architecture) if you're deciding between patterns
-- **Explore folder options**: Check out [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) to see different organization strategies
-- **Contribute**: The [template repo](https://github.com/nadirbad/VerticalSliceArchitecture) welcomes issues and PRs
+*   **Understand the theory**: Read [Vertical Slice Architecture in .NET: The Ultimate Guide](/vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
+    
+*   **Compare alternatives**: See [Vertical Slice vs. Clean Architecture](/vertical-slice-vs-clean-architecture) if you're deciding between patterns
+    
+*   **Explore folder options**: Check out [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) to see different organization strategies
+    
+*   **Contribute**: The [template repo](https://github.com/nadirbad/VerticalSliceArchitecture) welcomes issues and PRs
+    
 
 The template is a starting point, not a framework. Take what works for your domain. Skip what doesn't.
 
----
+* * *
 
-*Found this useful? Star the [GitHub repo](https://github.com/nadirbad/VerticalSliceArchitecture) to help others discover it.*
+*Found this useful? Star the* [*GitHub repo*](https://github.com/nadirbad/VerticalSliceArchitecture) *to help others discover it.*
