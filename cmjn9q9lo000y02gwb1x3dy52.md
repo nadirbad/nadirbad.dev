@@ -18,7 +18,7 @@ So which one fits your project? Let's break it down.
 
 *This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
-> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) (530+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
+> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
 ![Clean Architecture vs Vertical Slice Architecture comparison infographic showing layered approach versus feature-first approach with decision guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1766775679779/81d5b107-b07f-4189-a5ee-f710c9b06659.png align="center")
 
