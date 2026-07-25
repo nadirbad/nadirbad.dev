@@ -42,7 +42,7 @@ The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalS
 *   xUnit + FluentAssertions for testing
     
 
-The template has over 590 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
+The template has over 600 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
 
 ## Prerequisites
 
