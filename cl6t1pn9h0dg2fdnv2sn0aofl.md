@@ -91,7 +91,7 @@ While Clean Architecture emphasizes horizontal layers (UI, Application, Domain, 
 
 **Looking for folder organization patterns?** See the [VSA folder structure guide](/vertical-slice-architecture-folder-structure-4-approaches-compared) comparing 4 different approaches.
 
-## Example Vertical Slice Architecture Project solution in C# .NET 9
+## Example Vertical Slice Architecture Project solution in C# .NET 10
 
 Most applications start simple but they tend to change and evolve. Because of this, I wanted to create a simpler example project template that showcases the [Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) approach.
 
@@ -105,7 +105,7 @@ When moving toward the vertical slices we stop thinking about layers and abstrac
 
 This project repository is created based on the Clean Architecture solution template by Jason Taylor, and it uses technology choices and application business logic from this template, like:
 
-*   ASP.NET API with .NET 9
+*   ASP.NET API with .NET 10
     
 *   CQRS with MediatR
     
