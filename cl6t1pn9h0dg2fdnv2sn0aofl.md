@@ -11,7 +11,7 @@ tags: software-design, software-architecture, net, aspnet-core, clean-code, dotn
 
 ---
 
-I shared a [GitHub template for Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) back in 2022. It reached more then 500 stars and helped developers move past the rigidity of Clean Architecture.
+I shared a [GitHub template for Vertical Slice Architecture](https://github.com/nadirbad/VerticalSliceArchitecture) back in 2022. It reached more then 600 stars and helped developers move past the rigidity of Clean Architecture.
 
 But tools change. .NET 10 and C# 14 make vertical slices cleaner and easier to write. I updated my approach for 2026. This guide shows you how to organize a monolith for speed.
 
@@ -227,7 +227,7 @@ This article is part of the **Vertical Slice Architecture Series**:
 *   [**Getting Started Guide**](/vertical-slice-architecture-template-quickstart) — Clone, configure, and run the template in minutes
     
 
-**Source Code:** [Vertical Slice Architecture Template](https://github.com/nadirbad/VerticalSliceArchitecture) on GitHub (540+ stars)
+**Source Code:** [Vertical Slice Architecture Template](https://github.com/nadirbad/VerticalSliceArchitecture) on GitHub (600+ stars)
 
 ## Inspired by
 
