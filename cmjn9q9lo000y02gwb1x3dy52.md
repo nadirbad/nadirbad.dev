@@ -16,9 +16,9 @@ This comparison applies equally to Onion and Hexagonal architectures, which shar
 
 So which one fits your project? Let's break it down.
 
-*This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 530+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
+*This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
-> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) (530+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
+> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) (530+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
 ![Clean Architecture vs Vertical Slice Architecture comparison infographic showing layered approach versus feature-first approach with decision guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1766775679779/81d5b107-b07f-4189-a5ee-f710c9b06659.png align="center")
 
@@ -26,11 +26,11 @@ So which one fits your project? Let's break it down.
 
 Clean Architecture (CA), popularized by Robert C. Martin, organizes code through concentric layers. The key rule: all dependencies point inward toward the core.
 
-* **Domain (Core):** Business rules and entities live here. This layer depends on nothing else, so database or UI changes can't touch it.
+*   **Domain (Core):** Business rules and entities live here. This layer depends on nothing else, so database or UI changes can't touch it.
     
-* **Application (Use Cases):** Application-specific business logic.
-
-* **Infrastructure/UI (Outer Rings):** The messy stuff: databases, web frameworks, external APIs.
+*   **Application (Use Cases):** Application-specific business logic.
+    
+*   **Infrastructure/UI (Outer Rings):** The messy stuff: databases, web frameworks, external APIs.
     
 
 The goal? Keep business logic independent from frameworks and tools. In theory, you could swap your database with minimal pain.
@@ -65,15 +65,24 @@ Let's trace what happens when you need to add a field to a feature in both archi
 
 To add a "Tags" field to the TodoItem feature, you touch **8-10 files across 4 projects**:
 
-1. [`Domain/Entities/TodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Domain/Entities/TodoItem.cs) — Add property to entity
-2. [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs) — Add to command
-3. [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs) — Add validation rule
-4. [`Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs) — Add to update command
-5. [`Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs) — Add to list DTO
-6. [`Application/TodoLists/Queries/GetTodos/TodoItemDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoLists/Queries/GetTodos/TodoItemDto.cs) — Add to detail DTO
-7. [`Infrastructure/Data/Configurations/TodoItemConfiguration.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Infrastructure/Data/Configurations/TodoItemConfiguration.cs) — Add EF Core mapping
-8. [`Web/Endpoints/TodoItems.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Web/Endpoints/TodoItems.cs) — Update endpoint mappings (if needed)
-9. Plus corresponding test files in `tests/Application.FunctionalTests/TodoItems/`
+1.  [`Domain/Entities/TodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Domain/Entities/TodoItem.cs) — Add property to entity
+    
+2.  [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs) — Add to command
+    
+3.  [`Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs) — Add validation rule
+    
+4.  [`Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs) — Add to update command
+    
+5.  [`Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs) — Add to list DTO
+    
+6.  [`Application/TodoLists/Queries/GetTodos/TodoItemDto.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Application/TodoLists/Queries/GetTodos/TodoItemDto.cs) — Add to detail DTO
+    
+7.  [`Infrastructure/Data/Configurations/TodoItemConfiguration.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Infrastructure/Data/Configurations/TodoItemConfiguration.cs) — Add EF Core mapping
+    
+8.  [`Web/Endpoints/TodoItems.cs`](https://github.com/jasontaylordev/CleanArchitecture/blob/main/src/Web/Endpoints/TodoItems.cs) — Update endpoint mappings (if needed)
+    
+9.  Plus corresponding test files in `tests/Application.FunctionalTests/TodoItems/`
+    
 
 You also need to rebuild 4 separate projects (Domain, Application, Infrastructure, Web) for the change to compile.
 
@@ -81,9 +90,12 @@ You also need to rebuild 4 separate projects (Domain, Application, Infrastructur
 
 To add a "CancellationCategory" enum field to the CancelAppointment feature, you touch **2-3 files**:
 
-1. [`Application/Domain/Appointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Domain/Appointment.cs) — Add property and update domain method
-2. [`Application/Scheduling/CancelAppointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Scheduling/CancelAppointment.cs) — Update command, validator, handler
-3. [`Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs) — Add EF mapping (if needed)
+1.  [`Application/Domain/Appointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Domain/Appointment.cs) — Add property and update domain method
+    
+2.  [`Application/Scheduling/CancelAppointment.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Scheduling/CancelAppointment.cs) — Update command, validator, handler
+    
+3.  [`Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs`](https://github.com/nadirbad/VerticalSliceArchitecture/blob/main/src/Application/Infrastructure/Persistence/Configurations/AppointmentConfiguration.cs) — Add EF mapping (if needed)
+    
 
 ```csharp
 // In Appointment.cs - Add property
@@ -125,33 +137,33 @@ Why the difference? In Clean Architecture, the layering makes it natural to test
 
 ### VSA Works Well When
 
-* **You need to ship fast.** Features live in isolation, so you can move quickly without stepping on other code.
+*   **You need to ship fast.** Features live in isolation, so you can move quickly without stepping on other code.
     
-* **Requirements keep changing.** Throwing away a self-contained slice is easier than untangling logic spread across layers.
+*   **Requirements keep changing.** Throwing away a self-contained slice is easier than untangling logic spread across layers.
     
-* **Your team is experienced.** VSA has fewer guardrails. You need developers who'll recognize when to extract shared domain logic instead of copy-pasting.
+*   **Your team is experienced.** VSA has fewer guardrails. You need developers who'll recognize when to extract shared domain logic instead of copy-pasting.
     
-* **You're building APIs.** Request-response systems map naturally to slices.
+*   **You're building APIs.** Request-response systems map naturally to slices.
     
 
 ### Clean Architecture Works Well When
 
-* **You have complex business rules.** The protected domain core gives you a place for rich logic that won't get polluted by infrastructure concerns.
+*   **You have complex business rules.** The protected domain core gives you a place for rich logic that won't get polluted by infrastructure concerns.
     
-* **You actually might swap infrastructure.** If there's a real chance you'll change databases or frameworks, CA's abstraction boundaries pay off.
+*   **You actually might swap infrastructure.** If there's a real chance you'll change databases or frameworks, CA's abstraction boundaries pay off.
     
-* **Your team is newer.** The rigid "Controller calls Service calls Repository" structure acts as training wheels. It's harder to make a mess.
+*   **Your team is newer.** The rigid "Controller calls Service calls Repository" structure acts as training wheels. It's harder to make a mess.
     
 
 ### The Hybrid: Best of Both?
 
 Here's what I've seen work in practice: organize your top-level structure by features (VSA), but inside complex slices, apply CA principles.
 
-1. **Feature folders at the macro level.** Each slice owns its endpoint, handler, and simple data access.
+1.  **Feature folders at the macro level.** Each slice owns its endpoint, handler, and simple data access.
     
-2. **Domain separation at the micro level.** When a slice gets complex, extract domain logic into a separate class.
+2.  **Domain separation at the micro level.** When a slice gets complex, extract domain logic into a separate class.
     
-3. **Shared domain model.** Multiple slices can reference common entities and value objects that stay persistence-ignorant.
+3.  **Shared domain model.** Multiple slices can reference common entities and value objects that stay persistence-ignorant.
     
 
 You don't have to pick one religion. Use the structure that fits the complexity at hand.
@@ -162,11 +174,11 @@ You don't have to pick one religion. Use the structure that fits the complexity 
 
 If your CA project has turned into "lasagna architecture" with too many layers, you can simplify through **defactoring**:
 
-1. **Inline the abstractions.** Move repository and service logic back into the handler for a single feature.
+1.  **Inline the abstractions.** Move repository and service logic back into the handler for a single feature.
     
-2. **Group by feature.** Put the endpoint, command, handler, and validator in one folder.
+2.  **Group by feature.** Put the endpoint, command, handler, and validator in one folder.
     
-3. **Delete the interfaces.** If an interface only exists to satisfy the layering, remove it.
+3.  **Delete the interfaces.** If an interface only exists to satisfy the layering, remove it.
     
 
 This feels wrong at first. You've been taught that more abstraction is better. But if an abstraction doesn't have multiple implementations and doesn't enable testing, it's just noise.
@@ -177,7 +189,7 @@ This feels wrong at first. You've been taught that more abstraction is better. B
 
 Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while behaviors handle the cross-cutting stuff in one place. You get consistency without polluting every handler.
 
-*For implementation details, see* [Vertical Slice Architecture template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture).
+*For implementation details, see* [Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture).
 
 ## Choosing Based on Your Team
 
@@ -188,10 +200,10 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 ## Project Complexity Checklist
 
 | If your project is... | Consider... | Example Template |
-| :--- | :--- | :--- |
-| Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| --- | --- | --- |
+| Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Rich, complex business rules | Clean Architecture | [Jason Taylor's Clean Architecture](https://github.com/jasontaylordev/CleanArchitecture) |
-| Rapidly changing features | VSA | [VSA template for .NET 9](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Rapidly changing features | VSA | [VSA template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Long-term (5+ years) maintanance | Hybrid approach | Both patterns can evolve |
 | Needs independent scalability, headed toward microservices | VSA (slices become services) | Vertical slices map to service boundaries |
 
@@ -203,7 +215,7 @@ Start simple. If you're building a straightforward APIs, VSA will get you moving
 
 And don't be afraid to mix them. The best architectures I've seen treat this as a spectrum, not a binary choice.
 
----
+* * *
 
 ## Next Steps
 
@@ -211,6 +223,6 @@ And don't be afraid to mix them. The best architectures I've seen treat this as 
 
 **Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) for practical patterns.
 
-**Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (540+ stars) — a production-ready starting point with healthcare domain examples.
+**Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars) — a production-ready starting point with healthcare domain examples.
 
 **Want the full picture?** Read the [Complete Guide to Vertical Slice Architecture](/vertical-slice-architecture-dotnet) for implementation details, MediatR patterns, and testing strategies.
