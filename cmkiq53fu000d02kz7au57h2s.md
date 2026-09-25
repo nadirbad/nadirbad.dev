@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with the Vertical Slice Architecture Template for .NET 10"
+title: "Getting Started with the Vertical Slice Architecture Template for .NET 10 C#"
 seoTitle: "Vertical Slice Architecture Template for .NET 9: Quick Start Guide"
 seoDescription: "Get started with the Vertical Slice Architecture template for .NET 9. Clone, configure, and run a production-ready healthcare API in minutes."
 datePublished: 2026-01-17T19:52:35.754Z
@@ -42,7 +42,7 @@ The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalS
 *   xUnit + FluentAssertions for testing
     
 
-The template has over 600 stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
+The template has over 600+ stars on GitHub. It's not production-ready as-is. Think of it as a learning tool that shows patterns you can adapt for your own projects.
 
 ## Prerequisites
 
@@ -515,11 +515,11 @@ options.AddOpenBehavior(typeof(LoggingBehaviour<,>));
 
 From here:
 
-*   **Understand the theory**: Read [Vertical Slice Architecture in .NET: The Ultimate Guide](/vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
+*   **Understand the theory**: Read [Vertical Slice Architecture in .NET 10 C#: The Ultimate Guide](http:///vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
     
-*   **Compare alternatives**: See [Vertical Slice vs. Clean Architecture](/vertical-slice-vs-clean-architecture) if you're deciding between patterns
+*   **Compare alternatives**: See [Vertical Slice Architecture vs. Clean Architecture](http:///vertical-slice-vs-clean-architecture) if you're deciding between patterns
     
-*   **Explore folder options**: Check out [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) to see different organization strategies
+*   **Explore folder options**: Check out [Vertical Slice Architecture Folder Structure: 4 Approaches Compared](http:///vertical-slice-architecture-folder-structure) to see different organization strategies
     
 *   **Contribute**: The [template repo](https://github.com/nadirbad/VerticalSliceArchitecture) welcomes issues and PRs
     
