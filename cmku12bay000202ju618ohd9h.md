@@ -1,6 +1,6 @@
 ---
 title: "Vertical Slice Architecture Folder Structure: 4 Approaches Compared"
-seoTitle: "VSA Folder Structure: 4 .NET Project Organization Approaches"
+seoTitle: "Vertical Slice Architecture Folder Structure in .NET 10 C#"
 seoDescription: "Compare 4 different folder structure approaches for Vertical Slice Architecture in .NET. Includes code examples and recommendations for organizing features."
 datePublished: 2026-01-25T17:43:49.690Z
 cuid: cmku12bay000202ju618ohd9h
@@ -15,7 +15,7 @@ I've tried all the common approaches. Some blew up at scale. Others worked fine 
 
 The choice depends on your team size, domain complexity, and how much ceremony you're willing to tolerate.
 
-*This article is part of the [Vertical Slice Architecture Series](/vertical-slice-architecture-dotnet), which covers implementation patterns, architecture comparisons, and hands-on guides.*
+*This article is part of the* [*Vertical Slice Architecture Series*](/vertical-slice-architecture-dotnet)*, which covers implementation patterns, architecture comparisons, and hands-on guides.*
 
 ## Why Folder Structure Matters in VSA
 
@@ -141,17 +141,28 @@ public static class BookAppointment
 ### Pros and Cons
 
 **Pros:**
-- Everything in one place—no jumping between files to understand a feature
-- Deleting a feature means deleting one file
-- Reduces ceremony for simple features
-- The file name (`BookAppointment.cs`) is self-documenting
-- Easier to move or refactor entire features
+
+*   Everything in one place—no jumping between files to understand a feature
+    
+*   Deleting a feature means deleting one file
+    
+*   Reduces ceremony for simple features
+    
+*   The file name (`BookAppointment.cs`) is self-documenting
+    
+*   Easier to move or refactor entire features
+    
 
 **Cons:**
-- Files can grow large for complex features (300+ lines isn't unusual)
-- Some developers dislike nested classes and find them harder to read
-- IDE navigation within the file requires folding/unfolding
-- Code generation tools may need customization
+
+*   Files can grow large for complex features (300+ lines isn't unusual)
+    
+*   Some developers dislike nested classes and find them harder to read
+    
+*   IDE navigation within the file requires folding/unfolding
+    
+*   Code generation tools may need customization
+    
 
 ### When to Use This Approach
 
@@ -244,16 +255,26 @@ Each bounded context is self-contained. It has its own features, domain entities
 ### Pros and Cons
 
 **Pros:**
-- Natural path to a modular monolith
-- Clear bounded context boundaries from day one
-- Each domain can evolve independently (different patterns, different complexity)
-- Easy to extract into microservices later if needed
+
+*   Natural path to a modular monolith
+    
+*   Clear bounded context boundaries from day one
+    
+*   Each domain can evolve independently (different patterns, different complexity)
+    
+*   Easy to extract into microservices later if needed
+    
 
 **Cons:**
-- May duplicate common infrastructure (separate DbContexts, separate validators)
-- Requires upfront domain knowledge to draw the right boundaries
-- More complex project structure for small applications
-- Risk of creating artificial boundaries that don't match the business
+
+*   May duplicate common infrastructure (separate DbContexts, separate validators)
+    
+*   Requires upfront domain knowledge to draw the right boundaries
+    
+*   More complex project structure for small applications
+    
+*   Risk of creating artificial boundaries that don't match the business
+    
 
 ### When to Use This Approach
 
@@ -316,7 +337,7 @@ This structure works for most projects I encounter: complex enough to need organ
 ## Picking the Right Approach
 
 | Approach | Best For | Avoid When |
-|----------|----------|------------|
+| --- | --- | --- |
 | Feature-Based Folders | Large teams, complex features | Simple CRUD, small teams |
 | Single File (Nested Classes) | Small-medium teams, CRUD apps | Very complex features (300+ lines) |
 | Hybrid Clean + VSA | Clean Architecture migrations | Greenfield projects |
@@ -328,6 +349,6 @@ Start with the single-file approach (Approach 2) if you're unsure. It delivers m
 
 For a deeper dive into Vertical Slice Architecture itself—including CQRS patterns, MediatR setup, and testing strategies—see [Vertical Slice Architecture in .NET 10: The Ultimate Guide](/vertical-slice-architecture-dotnet) or explore [how VSA compares to Clean Architecture](/vertical-slice-vs-clean-architecture).
 
----
+* * *
 
 **Stop debating folder structure in code reviews.** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) and start building. It uses the single-file approach with domain organization - the combination I recommend for most .NET projects.
