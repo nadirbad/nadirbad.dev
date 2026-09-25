@@ -16,9 +16,9 @@ This comparison applies equally to Onion and Hexagonal architectures, which shar
 
 So which one fits your project? Let's break it down.
 
-*This article is part of my* [*Complete Guide to Vertical Slice Architecture in .NET*](/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
+*This article is part of my* [Complete Guide to Vertical Slice Architecture in .NET 10 C#](http:///vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
-> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
+> **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10 C#](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
 ![Clean Architecture vs Vertical Slice Architecture comparison infographic showing layered approach versus feature-first approach with decision guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1766775679779/81d5b107-b07f-4189-a5ee-f710c9b06659.png align="center")
 
@@ -170,7 +170,7 @@ You don't have to pick one religion. Use the structure that fits the complexity 
 
 *For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](/vertical-slice-architecture-folder-structure).
 
-## Migrating From Clean Architecture to VSA
+## Migrating From Clean Architecture to Vertical Slice Architecture
 
 If your CA project has turned into "lasagna architecture" with too many layers, you can simplify through **defactoring**:
 
@@ -189,7 +189,7 @@ This feels wrong at first. You've been taught that more abstraction is better. B
 
 Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while behaviors handle the cross-cutting stuff in one place. You get consistency without polluting every handler.
 
-*For implementation details, see* [Vertical Slice Architecture template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture).
+*For implementation details, see* [Vertical Slice Architecture template for .NET 10 C#](https://github.com/nadirbad/VerticalSliceArchitecture).
 
 ## Choosing Based on Your Team
 
@@ -201,7 +201,7 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 
 | If your project is... | Consider... | Example Template |
 | --- | --- | --- |
-| Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) |
+| Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 10 C#](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Rich, complex business rules | Clean Architecture | [Jason Taylor's Clean Architecture](https://github.com/jasontaylordev/CleanArchitecture) |
 | Rapidly changing features | VSA | [VSA template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Long-term (5+ years) maintanance | Hybrid approach | Both patterns can evolve |
@@ -209,7 +209,7 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 
 ## The Bottom Line
 
-There's no universal winner. Clean Architecture protects complexity but adds ceremony. VSA reduces ceremony but requires discipline.
+There's no universal winner. Clean Architecture protects complexity but adds ceremony. Vertical Slice Architecture reduces ceremony but requires discipline.
 
 Start simple. If you're building a straightforward APIs, VSA will get you moving faster. If you're modeling a complex domain with lots of business rules, Clean Architecture's protected core is worth the overhead.
 
