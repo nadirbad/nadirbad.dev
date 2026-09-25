@@ -1,7 +1,7 @@
 ---
 title: "EventStorming: How to Stop Building the Wrong System"
 seoTitle: "Event Storming: How to Stop Building the Wrong System"
-seoDescription: "Learn how Event Storming workshops help teams discover real business processes before writing code.A practical guide to running your first Big Picture"
+seoDescription: "Learn how Event Storming workshops help teams discover real business processes before writing code. A practical guide to running your first workshop"
 datePublished: 2026-03-07T09:30:00.000Z
 cuid: cmmsudjjn01pd2ehdghx94pzl
 slug: event-storming-how-to-stop-building-the-wrong-system
