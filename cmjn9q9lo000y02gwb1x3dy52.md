@@ -43,6 +43,19 @@ A "slice" cuts through the entire stack - from API endpoint to database for one 
 
 When you add a feature in VSA, you're not scattering changes across layers. You're working in one folder that owns everything for that request.
 
+## What Are the Alternatives to Clean Architecture?
+
+The main alternative is Vertical Slice Architecture. It organizes code by feature instead of by layer. Other options teams pick:
+
+*   **Feature folders.** Group files by feature inside a normal project, without VSA's one-request-per-slice rule.
+    
+*   **Modular monolith.** Split the app into business modules that each hide their own internals.
+    
+*   **A hybrid.** Vertical slices on top, a shared domain model underneath. More on that below.
+    
+
+Onion and Hexagonal Architecture aren't real alternatives. They share Clean Architecture's layered, dependencies-point-inward idea. Screaming Architecture isn't a separate pattern either. It's Robert C. Martin's name for a folder structure that tells you what the system does, and VSA gets you there by default.
+
 ## How They Compare
 
 ### Code Organization
@@ -204,18 +217,40 @@ Use a mediator pipeline (MediatR, Wolverine). Each slice stays simple while beha
 | Primarily CRUD / Data-driven | VSA or simple N-Tier | [VSA template for .NET 10 C#](https://github.com/nadirbad/VerticalSliceArchitecture) |
 | Rich, complex business rules | Clean Architecture | [Jason Taylor's Clean Architecture](https://github.com/jasontaylordev/CleanArchitecture) |
 | Rapidly changing features | VSA | [VSA template for .NET 10](https://github.com/nadirbad/VerticalSliceArchitecture) |
-| Long-term (5+ years) maintanance | Hybrid approach | Both patterns can evolve |
+| Long-term (5+ years) maintenance | Hybrid approach | Both patterns can evolve |
 | Needs independent scalability, headed toward microservices | VSA (slices become services) | Vertical slices map to service boundaries |
 
 ## The Bottom Line
 
 There's no universal winner. Clean Architecture protects complexity but adds ceremony. Vertical Slice Architecture reduces ceremony but requires discipline.
 
-Start simple. If you're building a straightforward APIs, VSA will get you moving faster. If you're modeling a complex domain with lots of business rules, Clean Architecture's protected core is worth the overhead.
+Start simple. If you're building a straightforward API, VSA will get you moving faster. If you're modeling a complex domain with lots of business rules, Clean Architecture's protected core is worth the overhead.
 
 And don't be afraid to mix them. The best architectures I've seen treat this as a spectrum, not a binary choice.
 
 * * *
+
+## FAQ
+
+### What's the difference between Vertical Slice and Clean Architecture?
+
+Clean Architecture splits code into layers (Domain, Application, Infrastructure, UI), and every feature touches each layer. Vertical Slice Architecture puts everything one request needs into a single slice, from endpoint to database. Clean Architecture protects the core. VSA keeps each change in one place.
+
+### Can you combine Vertical Slice and Clean Architecture?
+
+Yes. Use feature folders at the top level and pull complex domain logic into a shared, persistence-ignorant model. Simple slices stay simple, and complex ones get Clean Architecture's protection where they need it.
+
+### Is feature-based architecture the same as Vertical Slice Architecture?
+
+Close, but not quite. Feature-based architecture groups files by feature. VSA goes a step further: each slice handles one request end to end and doesn't share services with other slices.
+
+### Is Vertical Slice Architecture better than Clean Architecture?
+
+Neither wins everywhere. VSA ships request-response APIs faster. Clean Architecture pays off when complex business rules need protection, or when you might really swap infrastructure. Use the Project Complexity Checklist above to decide.
+
+### Does Vertical Slice Architecture work with .NET 10?
+
+Yes. The [VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) runs on .NET 10 with Minimal APIs, MediatR, FluentValidation, and EF Core.
 
 ## Next Steps
 
