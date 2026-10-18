@@ -261,3 +261,7 @@ Yes. The [VSA template](https://github.com/nadirbad/VerticalSliceArchitecture) r
 **Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars) — a production-ready starting point with healthcare domain examples.
 
 **Want the full picture?** Read the [Complete Guide to Vertical Slice Architecture](/vertical-slice-architecture-dotnet) for implementation details, MediatR patterns, and testing strategies.
+
+* * *
+
+**About the author.** I'm Nadir Badnjevic, a software architect with 18+ years building .NET and Azure systems. I maintain the [Vertical Slice Architecture template for .NET](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars). More [about me](https://nadirbad.dev/page/about).
