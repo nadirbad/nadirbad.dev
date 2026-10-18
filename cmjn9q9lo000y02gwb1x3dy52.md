@@ -168,7 +168,7 @@ Here's what I've seen work in practice: organize your top-level structure by fea
 
 You don't have to pick one religion. Use the structure that fits the complexity at hand.
 
-*For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](/vertical-slice-architecture-folder-structure).
+*For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](http:///vertical-slice-architecture-folder-structure-4-approaches-compared).
 
 ## Migrating From Clean Architecture to Vertical Slice Architecture
 
@@ -221,7 +221,7 @@ And don't be afraid to mix them. The best architectures I've seen treat this as 
 
 **New to the template?** Start with the [Quick Start Guide](/vertical-slice-architecture-template-quickstart) to get the healthcare API running in minutes.
 
-**Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](/vertical-slice-architecture-folder-structure) for practical patterns.
+**Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](http:///vertical-slice-architecture-folder-structure-4-approaches-compared) for practical patterns.
 
 **Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars) — a production-ready starting point with healthcare domain examples.
 
