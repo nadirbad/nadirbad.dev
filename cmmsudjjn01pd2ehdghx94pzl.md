@@ -13,11 +13,13 @@ Most teams make their most critical architectural decisions during the first few
 
 It's the Project Paradox, and it's how legacy systems are born. You rush past domain exploration, celebrate quick technical progress, and end up building something that doesn't solve the actual business problem.
 
-[Event Storming](https://www.eventstorming.com/) breaks this cycle. It's a collaborative workshop technique created by Alberto Brandolini that puts sticky notes on a wall and forces everyone in the room to confront reality together, before a single line of code gets written.
+## What Is Event Storming?
+
+[Event Storming](https://www.eventstorming.com/) is a collaborative workshop technique created by Alberto Brandolini. It breaks this cycle by putting sticky notes on a wall and making everyone in the room confront reality together, before a single line of code gets written.
 
 I've used it on many projects ranging from enterprise platforms to multi-tenant SaaS products. Every time, the same thing happens: people who thought they agreed on how the business process works discover they don't. And that discovery, made on Day 3 instead of Month 6, saves the project.
 
-## **Domain Events: Why Start There?**
+## Domain Events: Why Start There?
 
 An event in Event Storming is a business fact. Something that already happened. Past tense. Always.
 
