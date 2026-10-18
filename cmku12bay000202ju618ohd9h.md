@@ -27,9 +27,9 @@ The difference is stark. In a well-organized VSA project, a new developer can op
 
 Bad structure, on the other hand, creates friction. You waste time navigating. You accidentally duplicate code because you didn't realize it already existed somewhere else. You hesitate to delete features because you're not sure what depends on what.
 
-Jimmy Bogard, who coined the term Vertical Slice Architecture: take all code related to a single user request—from the UI to the database—and move it to a single location on disk. That's the north star. The four approaches below are different ways to achieve it.
+Jimmy Bogard [introduced Vertical Slice Architecture in 2018](https://www.jimmybogard.com/vertical-slice-architecture/). The core idea is simple: take all code for a single request, from the UI to the database, and put it in one place on disk. That's the north star. The four approaches below are different ways to get there.
 
-> **Want my recommendation?** Skip to [My Recommended Structure](#my-recommended-structure). But understanding the trade-offs will help you adapt it to your context.
+> **Short answer:** Organize the top level by business area (`Scheduling/`, `Billing/`) and put each feature in a single file: command, validator, handler, and endpoint together. Keep truly shared code in `Common/` and `Infrastructure/`. The full layout is in [My Recommended Structure](https://nadirbad.dev/vertical-slice-architecture-folder-structure-4-approaches-compared#my-recommended-structure).
 
 ## Approach 1: Feature-Based Folders
 
@@ -347,7 +347,7 @@ There's no universally correct answer. The best structure is the one your team c
 
 Start with the single-file approach (Approach 2) if you're unsure. It delivers most of the VSA benefits with minimal overhead. You can always refactor toward feature folders or domain organization as your application grows.
 
-For a deeper dive into Vertical Slice Architecture itself—including CQRS patterns, MediatR setup, and testing strategies—see [Vertical Slice Architecture in .NET 10: The Ultimate Guide](/vertical-slice-architecture-dotnet) or explore [how VSA compares to Clean Architecture](/vertical-slice-vs-clean-architecture).
+For a deeper dive into Vertical Slice Architecture itself—including CQRS patterns, MediatR setup, and testing strategies—see [Vertical Slice Architecture in C# and .NET 10: Complete Guide](https://nadirbad.dev/vertical-slice-architecture-dotnet) or explore [how VSA compares to Clean Architecture](https://nadirbad.dev/vertical-slice-vs-clean-architecture).
 
 * * *
 
