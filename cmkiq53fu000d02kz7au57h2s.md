@@ -531,3 +531,7 @@ The template is a starting point, not a framework. Take what works for your doma
 * * *
 
 *Found this useful? Star the* [*GitHub repo*](https://github.com/nadirbad/VerticalSliceArchitecture) *to help others discover it.*
+
+* * *
+
+**About the author.** I'm Nadir Badnjevic, a software architect with 18+ years building .NET and Azure systems. I maintain the [Vertical Slice Architecture template for .NET](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars). More [about me](https://nadirbad.dev/page/about).
