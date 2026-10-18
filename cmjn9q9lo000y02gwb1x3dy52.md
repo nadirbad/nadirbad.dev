@@ -16,7 +16,7 @@ This comparison applies equally to Onion and Hexagonal architectures, which shar
 
 So which one fits your project? Let's break it down.
 
-*This article is part of my* [Complete Guide to Vertical Slice Architecture in .NET 10 C#](http:///vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
+*This article is part of my* [Complete Guide to Vertical Slice Architecture in .NET 10 C#](https://nadirbad.dev/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
 > **Real-world comparison:** This article compares two production-ready templates—[Vertical Slice Architecture template for .NET 10 C#](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars, healthcare domain) and [Jason Taylor's Clean Architecture template](https://github.com/jasontaylordev/CleanArchitecture) (17k+ stars, ToDo). All code examples are from these actual codebases.
 
@@ -168,7 +168,7 @@ Here's what I've seen work in practice: organize your top-level structure by fea
 
 You don't have to pick one religion. Use the structure that fits the complexity at hand.
 
-*For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](http:///vertical-slice-architecture-folder-structure-4-approaches-compared).
+*For detailed folder organization patterns, see* [*VSA Folder Structure: 4 Approaches Compared*](https://nadirbad.dev/vertical-slice-architecture-folder-structure-4-approaches-compared).
 
 ## Migrating From Clean Architecture to Vertical Slice Architecture
 
@@ -219,9 +219,9 @@ And don't be afraid to mix them. The best architectures I've seen treat this as 
 
 ## Next Steps
 
-**New to the template?** Start with the [Quick Start Guide](/vertical-slice-architecture-template-quickstart) to get the healthcare API running in minutes.
+**New to the template?** Start with the [Quick Start Guide](https://nadirbad.dev/vertical-slice-architecture-template-quickstart) to get the healthcare API running in minutes.
 
-**Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](http:///vertical-slice-architecture-folder-structure-4-approaches-compared) for practical patterns.
+**Deciding on folder organization?** See [VSA Folder Structure: 4 Approaches Compared](https://nadirbad.dev/vertical-slice-architecture-folder-structure-4-approaches-compared) for practical patterns.
 
 **Ready to try VSA?** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars) — a production-ready starting point with healthcare domain examples.
 
