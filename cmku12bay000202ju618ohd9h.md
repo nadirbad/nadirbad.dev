@@ -1,7 +1,7 @@
 ---
 title: "Vertical Slice Architecture Folder Structure: 4 Approaches Compared"
 seoTitle: "Vertical Slice Architecture Folder Structure in .NET 10 C#"
-seoDescription: "Compare 4 different folder structure approaches for Vertical Slice Architecture in .NET. Includes code examples and recommendations for organizing features."
+seoDescription: "Compare 4 folder structures for Vertical Slice Architecture in .NET 10 and C#, with code examples and the structure I use in a 600+ star template."
 datePublished: 2026-01-25T17:43:49.690Z
 cuid: cmku12bay000202ju618ohd9h
 slug: vertical-slice-architecture-folder-structure-4-approaches-compared
