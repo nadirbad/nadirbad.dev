@@ -14,7 +14,7 @@ Project structure shapes everything: onboarding speed, maintainability, how fast
 
 This comparison applies equally to Onion and Hexagonal architectures, which share Clean Architecture's layered philosophy. The feature-based vs layered architecture debate comes down to where you want your coupling.
 
-So which one fits your project? Let's break it down.
+**Short answer:** Pick Vertical Slice Architecture when you ship many independent features and want each change to stay in one folder. Pick Clean Architecture when a complex domain core needs protection from infrastructure. The setup I've seen work best is a hybrid: feature folders on top, a small shared domain underneath.
 
 *This article is part of my* [Complete Guide to Vertical Slice Architecture in .NET 10 C#](https://nadirbad.dev/vertical-slice-architecture-dotnet)*, which includes a production-ready template with 600+ GitHub stars-*[*featured in NDepend's architecture comparison*](https://blog.ndepend.com/vertical-slice-architecture-in-asp-net-core/).
 
