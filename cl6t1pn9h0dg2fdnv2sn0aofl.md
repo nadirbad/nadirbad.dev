@@ -236,3 +236,6 @@ This article is part of the **Vertical Slice Architecture Series**:
 *   [Vertical slice architecture by Jimmy Bogard](https://jimmybogard.com/vertical-slice-architecture/)
     
 *   [Organize code by Feature using Vertical Slices by Derek Comartin](https://codeopinion.com/organizing-code-by-feature-using-vertical-slices/)
+    
+
+**About the author.** I'm Nadir Badnjevic, a software architect with 18+ years building .NET and Azure systems. I maintain the [Vertical Slice Architecture template for .NET](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars). More [about me](https://nadirbad.dev/page/about).
