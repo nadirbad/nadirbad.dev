@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with the Vertical Slice Architecture Template for .NET 10 C#"
-seoTitle: "Vertical Slice Architecture Template for .NET 9: Quick Start Guide"
-seoDescription: "Get started with the Vertical Slice Architecture template for .NET 9. Clone, configure, and run a production-ready healthcare API in minutes."
+seoTitle: "Vertical Slice Architecture Example in C#: .NET 10 Template"
+seoDescription: "Clone and run a real Vertical Slice Architecture example in C# and .NET 10. Open-source GitHub template (600+ stars) with a healthcare scheduling API."
 datePublished: 2026-01-17T19:52:35.754Z
 cuid: cmkiq53fu000d02kz7au57h2s
 slug: vertical-slice-architecture-template-quickstart
@@ -9,11 +9,13 @@ tags: software-design, software-architecture, software-engineering, dotnet, dotn
 
 ---
 
-I built this template because I was tired of creating the same boilerplate every time I started a new project. After [writing about Vertical Slice Architecture](/vertical-slice-architecture-dotnet) and seeing the pattern gain traction, I wanted a starting point that showed how all the pieces fit together in a real domain—not another todo app.
+I built this template because I was tired of creating the same boilerplate every time I started a new project. After [writing about Vertical Slice Architecture](https://nadirbad.dev/vertical-slice-architecture-dotnet) and seeing the pattern gain traction, I wanted a starting point that showed how all the pieces fit together in a real domain—not another todo app.
 
 This guide walks you through cloning the template, running it, understanding its structure, and adding your first feature.
 
-## What's Included in the Template
+**Example project:** [github.com/nadirbad/VerticalSliceArchitecture](https://github.com/nadirbad/VerticalSliceArchitecture) is a complete Vertical Slice Architecture example in C# and .NET 10 (600+ stars). It models a clinic's appointment scheduling, not a todo app.
+
+## What's in the Vertical Slice Architecture Example Project
 
 The [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) models a medical clinic appointment scheduling system. Patients book appointments with doctors, and the system enforces real-world constraints: no double-booking, appointments scheduled in advance, and controlled state transitions.
 
@@ -515,11 +517,11 @@ options.AddOpenBehavior(typeof(LoggingBehaviour<,>));
 
 From here:
 
-*   **Understand the theory**: Read [Vertical Slice Architecture in .NET 10 C#: The Ultimate Guide](http:///vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
+*   **Understand the theory**: Read [Vertical Slice Architecture in C# and .NET 10: Complete Guide](https://nadirbad.dev/vertical-slice-architecture-dotnet) for the architectural reasoning behind this approach
     
-*   **Compare alternatives**: See [Vertical Slice Architecture vs. Clean Architecture](http:///vertical-slice-vs-clean-architecture) if you're deciding between patterns
+*   **Compare alternatives**: See [Vertical Slice Architecture vs. Clean Architecture](https://nadirbad.dev/vertical-slice-vs-clean-architecture) if you're deciding between patterns
     
-*   **Explore folder options**: Check out [Vertical Slice Architecture Folder Structure: 4 Approaches Compared](http:///vertical-slice-architecture-folder-structure) to see different organization strategies
+*   **Explore folder options**: Check out [Vertical Slice Architecture Folder Structure: 4 Approaches Compared](https://nadirbad.dev/vertical-slice-architecture-folder-structure-4-approaches-compared) to see different organization strategies
     
 *   **Contribute**: The [template repo](https://github.com/nadirbad/VerticalSliceArchitecture) welcomes issues and PRs
     
