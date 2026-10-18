@@ -352,3 +352,7 @@ For a deeper dive into Vertical Slice Architecture itself—including CQRS patte
 * * *
 
 **Stop debating folder structure in code reviews.** Clone the [Vertical Slice Architecture template](https://github.com/nadirbad/VerticalSliceArchitecture) and start building. It uses the single-file approach with domain organization - the combination I recommend for most .NET projects.
+
+* * *
+
+**About the author.** I'm Nadir Badnjevic, a software architect with 18+ years building .NET and Azure systems. I maintain the [Vertical Slice Architecture template for .NET](https://github.com/nadirbad/VerticalSliceArchitecture) (600+ stars). More [about me](https://nadirbad.dev/page/about).
