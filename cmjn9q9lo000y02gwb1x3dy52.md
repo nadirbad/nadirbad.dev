@@ -1,6 +1,6 @@
 ---
 title: "Vertical Slice vs. Clean Architecture: Which Should You Choose?"
-seoTitle: "Vertical Slice vs Clean Architecture: A Practical Comparison (2025)"
+seoTitle: "Vertical Slice vs Clean Architecture: A Practical Comparison (2026)"
 seoDescription: "Compare Vertical Slice vs Clean Architecture with real examples. Learn when each pattern fits, migration paths, and a hybrid approach for .NET teams."
 datePublished: 2025-12-26T19:32:18.588Z
 cuid: cmjn9q9lo000y02gwb1x3dy52
