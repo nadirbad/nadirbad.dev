@@ -37,7 +37,7 @@ The goal? Keep business logic independent from frameworks and tools. In theory, 
 
 ## Vertical Slice Architecture: The Feature-First Approach
 
-Vertical Slice Architecture (VSA), coined by Jimmy Bogard, flips the script. Instead of organizing by technical layer, you organize by feature.
+Vertical Slice Architecture (VSA), [introduced by Jimmy Bogard in 2018](https://www.jimmybogard.com/vertical-slice-architecture/), flips the script. Instead of organizing by technical layer, you organize by feature.
 
 A "slice" cuts through the entire stack - from API endpoint to database for one specific use case. The guiding principle: **minimize coupling between slices, maximize cohesion within a slice.**
 
